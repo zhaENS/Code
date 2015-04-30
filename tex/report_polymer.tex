@@ -231,8 +231,16 @@ end
 	 \paragraph{}
 	 The bead-spring model is also called Rouse Model .In this model,the single chain diffusion is represented by Brownian motion ,there is no exclude volume 	interactions between the beads and each bead experience a drag force proportional to their velocity ,then the position of the beads will satisfy the Langevin equation :
 	 \begin{equation}
-	 \frac{d\bm{R_n}}{dt}=\frac{k}{\xi}(\bm{R_{n+1}}+\bm{R_{n-1}}-2\bm{R_{n}})+\bm{g_n}
+	 \frac{d\bm{R_n}}{dt}=\frac{k}{\xi}(\bm{R_{n+1}}+\bm{R_{n-1}}-2\bm{R_{n}})+\bm{g_n}, \forall n \in [1,2...N-1]
 	 \end{equation}
+	 For the bead $0$ and $N$,we have :
+	 \[
+	 \begin{cases}
+	\frac{d\bm{R_0}}{dt}=\frac{k}{\xi}(\bm{R_{1}}-\bm{R_{0}})+\bm{g_n}\\
+	\frac{d\bm{R_n}}{dt}=\frac{k}{\xi}(\bm{R_{n-1}}-\bm{R_{n}})+\bm{g_n}
+	 \end{cases}
+	 \]
+	 where $\xi$ is friction coefficient,$k$ is spring constant.
 	 \subsection{Rouse Model Simulation}
 	 
 \end{document}
