@@ -11,14 +11,14 @@ classdef RouseModel<handle
         MetBeedNum; %the number of the beed which have met with the first and last beed;
         connectedBeads %an n by two array with pair wise bead numbers to connect
         fixedBeads %numBeads of beads that do not move
-     
+        b %length between 2 beads 
     end
     
     methods
         
         
         function obj=RouseModel(dimension,numParticles,dt,diffusionConst,...
-                numSteps,frictionCoefficient,connectedBeads, fixedBeads)
+                numSteps,frictionCoefficient,connectedBeads, fixedBeads,b)
             
             obj.dimension = dimension;
             obj.numParticles = numParticles;
@@ -29,7 +29,7 @@ classdef RouseModel<handle
             obj.frictionCoefficient = frictionCoefficient;
             obj.fixedBeads= fixedBeads;
             obj.connectedBeads = connectedBeads ;
-           
+            obj.b=b;
         end
         
         
@@ -43,7 +43,7 @@ classdef RouseModel<handle
                     
                 end
                 
-                a = obj.diffusionConst/obj.frictionCoefficient;
+                a = obj.dimension*obj.diffusionConst/obj.b^2;
                 R = RouseMatrix(obj.numParticles, obj.connectedBeads, obj.fixedBeads);
 
                 for j=2:obj.numSteps
@@ -92,7 +92,7 @@ classdef RouseModel<handle
                 
                 set(l,'XData',obj.paths(:,1,i),'YData',obj.paths(:,2,i),'ZData',obj.paths(:,3,i));
                 
-                        pause(0.5)
+                        pause(0.2)
                 
                 drawnow
             end
