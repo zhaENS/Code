@@ -7,12 +7,12 @@ dimension           = 3;
 numParticles        = 32;
 dt                  = 0.01;
 diffusionConst      = 1;
-numSteps            = 100;
+numSteps            = Inf;
 numSimulations      = 1;
 frictionCoefficient = 1;
 connectedBeads      = [];
 fixedBeads          = [];
-metBeedNum          = [2 12 20];
+metBeedNum          = [1 16 32];
 b                   = 1;
 encounterDistance   = b./2;
 %initialize the class
