@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  29 APR 2015 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  30 APR 2015 15:08
 entering extended mode
 **report_polymer.tex
 (report_polymer.tex
@@ -821,6 +821,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (10.27684pt too wide) in paragraph at lines 27--27
+[]\OT1/lmr/bx/n/14.4 The ran-dom walk model:the freely jointed chain 
+ []
+
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -832,44 +836,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 46.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 51.
 ("d:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OML+pcr on input line 48.
+LaTeX Font Info:    Try loading font information for OML+pcr on input line 53.
 
 ("d:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlpcr.fd"
 File: omlpcr.fd 
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 48.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 53.
 
-Overfull \hbox (0.60352pt too wide) in paragraph at lines 62--63
+Overfull \hbox (0.60352pt too wide) in paragraph at lines 67--68
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 76.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 81.
  ("d:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 76--77
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 81--82
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (48.604pt too wide) in paragraph at lines 82--83
+Overfull \hbox (48.604pt too wide) in paragraph at lines 87--88
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (19.80371pt too wide) in paragraph at lines 93--94
+Overfull \hbox (19.80371pt too wide) in paragraph at lines 98--99
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (159.00513pt too wide) in paragraph at lines 100--101
+Overfull \hbox (159.00513pt too wide) in paragraph at lines 105--106
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -877,7 +881,7 @@ Overfull \hbox (159.00513pt too wide) in paragraph at lines 100--101
  []
 
 
-Overfull \hbox (48.604pt too wide) in paragraph at lines 103--105
+Overfull \hbox (48.604pt too wide) in paragraph at lines 108--110
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][] 
  []
@@ -890,16 +894,16 @@ Package epstopdf Info: Source file: <1.eps>
 (epstopdf)                    size: 9687 bytes
 (epstopdf)             Command: <epstopdf --outfile=1-eps-converted-to.pdf 1.ep
 s>
-(epstopdf)             \includegraphics on input line 121.
+(epstopdf)             \includegraphics on input line 126.
 Package epstopdf Info: Output file is already uptodate.
-<1-eps-converted-to.pdf, id=21, 963.6pt x 665.48625pt>
+<1-eps-converted-to.pdf, id=22, 963.6pt x 665.48625pt>
 File: 1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 1-eps-converted-to.pdf>
-Package pdftex.def Info: 1-eps-converted-to.pdf used on input line 121.
+Package pdftex.def Info: 1-eps-converted-to.pdf used on input line 126.
 (pdftex.def)             Requested size: 231.26378pt x 159.70981pt.
 
-Overfull \hbox (58.76378pt too wide) in paragraph at lines 121--122
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 126--127
  [][] 
  []
 
@@ -911,20 +915,42 @@ Package epstopdf Info: Source file: <2.eps>
 (epstopdf)                    size: 9814 bytes
 (epstopdf)             Command: <epstopdf --outfile=2-eps-converted-to.pdf 2.ep
 s>
-(epstopdf)             \includegraphics on input line 126.
+(epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
-<2-eps-converted-to.pdf, id=22, 963.6pt x 665.48625pt>
+<2-eps-converted-to.pdf, id=23, 963.6pt x 665.48625pt>
 File: 2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 2-eps-converted-to.pdf>
-Package pdftex.def Info: 2-eps-converted-to.pdf used on input line 126.
+Package pdftex.def Info: 2-eps-converted-to.pdf used on input line 131.
 (pdftex.def)             Requested size: 231.26378pt x 159.70981pt.
 
-Overfull \hbox (58.76378pt too wide) in paragraph at lines 126--127
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 131--132
  [][] 
  []
 
 [3]
+Overfull \hbox (10.20361pt too wide) in paragraph at lines 139--140
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 156--157
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[4 <./1-eps-converted-to.pdf> <./2-eps-converted-to.pdf>]
+Overfull \hbox (91.80444pt too wide) in paragraph at lines 175--176
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (24.60376pt too wide) in paragraph at lines 218--220
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][] 
+ []
+
 Package epstopdf Info: Source file: <PDF.eps>
 (epstopdf)                    date: 2015-04-29 18:26:27
 (epstopdf)                    size: 28299 bytes
@@ -933,42 +959,51 @@ Package epstopdf Info: Source file: <PDF.eps>
 (epstopdf)                    size: 8589 bytes
 (epstopdf)             Command: <epstopdf --outfile=PDF-eps-converted-to.pdf PD
 F.eps>
-(epstopdf)             \includegraphics on input line 134.
+(epstopdf)             \includegraphics on input line 227.
 Package epstopdf Info: Output file is already uptodate.
- <PDF-eps-converted-to.pdf, id=26, 963.6pt x 683.55376pt>
+<PDF-eps-converted-to.pdf, id=38, 963.6pt x 683.55376pt>
 File: PDF-eps-converted-to.pdf Graphic file (type pdf)
 
 <use PDF-eps-converted-to.pdf>
-Package pdftex.def Info: PDF-eps-converted-to.pdf used on input line 134.
-(pdftex.def)             Requested size: 303.53377pt x 215.31013pt.
- [4 <./1-eps-converted-to.pdf> <./2-eps-converted-to.pdf> <./PDF-eps-converted-
-to.pdf>] (report_polymer.aux) ) 
+Package pdftex.def Info: PDF-eps-converted-to.pdf used on input line 227.
+(pdftex.def)             Requested size: 448.07378pt x 317.84921pt.
+
+Overfull \hbox (103.07378pt too wide) in paragraph at lines 227--228
+[][] 
+ []
+
+[5] [6 <./PDF-eps-converted-to.pdf>] (report_polymer.aux) ) 
 Here is how much of TeX's memory you used:
- 7326 strings out of 493698
- 97368 string characters out of 3144418
- 205668 words of memory out of 3000000
- 10505 multiletter control sequences out of 15000+200000
- 47107 words of font info for 61 fonts, out of 3000000 for 9000
+ 7368 strings out of 493698
+ 97802 string characters out of 3144418
+ 217672 words of memory out of 3000000
+ 10539 multiletter control sequences out of 15000+200000
+ 54950 words of font info for 69 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 42i,8n,42p,332b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
-{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fon
-tname/8r.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/
-Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{d:/Program Files/MiKTeX 
-2.9/fonts/enc/dvips/lm/lm-mathex.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvi
-ps/lm/lm-mathit.enc}<d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><d:/P
+ 42i,8n,42p,361b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
+{d:/Program Files/Mi
+KTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/Program Files/MiKTeX 2.9/fonts/en
+c/dvips/lm/lm-rm.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.
+enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{d:/Program Fi
+les/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}<d:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmbx7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmmib10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra
+/cmmib7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbsy7.pfb><d:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><d:/Program Files/MiKT
-eX 2.9/fonts/type1/public/lm/lmex10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type
-1/public/lm/lmmi10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7
-.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><d:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><d:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmr17.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmr7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><d:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on report_polymer.pdf (4 pages, 209405 bytes).
+eX 2.9/fonts/type1/public/lm/lmbx7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmex10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10
+.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><d:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/lm/lmmib7.pfb><d:/Program Files/MiKTeX 2.9/f
+onts/type1/public/lm/lmr10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/
+lm/lmr12.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><d:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><d:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/lm/lmsy10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/
+urw/courier/ucrr8a.pfb>
+Output written on report_polymer.pdf (6 pages, 258608 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

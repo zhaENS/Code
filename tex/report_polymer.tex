@@ -12,10 +12,10 @@
 \usepackage{multicol}
 \usepackage{float}
 \usepackage{subfigure}
-\title{\LARGE{Polymer Simulations}\\ \large{Report}
+\title{\LARGE{Polymer Chain Dynamics Simulation}\\ \large{Report}
 }
 \author{ZHA Chenyu}
-\date{5.Mars.2015}
+%\date{5.Mars.2015}
 \renewcommand*\contentsname{Table de matière}
 
 \begin{document}
@@ -24,7 +24,7 @@
 \pagebreak
 
 
-\section{The random walk model:Gaussian Chain}
+\section{The random walk model:the freely jointed chain}
 \paragraph{}
 
 Consider a linear polymer to be a freely-jointed chain with N beads, length of each bond is $b$ , that occupy zero volume. The path of the chains is like a 'random walk 'in three dimensions, limited only by the constraint that each segment must be joined to its neighbors.\\
@@ -41,7 +41,12 @@ The probability distribution of $\bm{R}$ is:
 \begin{equation}
 P(\bm{R},N)=(\frac{3}{2\pi Nb^2})^{3/2}exp(-\frac{3\bm{R}^2}{2Nb^2})
 \end{equation}
-The probability distribution is Gaussian,so we also call it Gaussian Chain.
+The probability distribution function of $\bm{R}$ obeys the Gaussian distribution.
+The position of the beads after each step will satisfy the diffusion equation :
+\begin{equation}
+\bm{R(t+\Delta t)}=\bm{R(t)}+\sqrt{2D\Delta t}\bm{g(t)}
+\end{equation}
+$\bm{g(t)}$ is normally distributed random noise.
 \subsection{Random walk Simulation}
 \begin{lstlisting}
 %This program is used to simulate the brownian motion
@@ -129,9 +134,105 @@ end
 	\end{minipage}
 \end{figure}
 \subsection{Probability distribution function of $\bm{R}$  }
-In order to verify that the PDF of $\bm{R}$ is Gaussian,we calculate the 'end to end distance' $\bm{R}$ for each simulation,then we plot it with histogram by coordinate $(x,y,z)$ respectively and compare with the probability
+In order to verify that the PDF of $\bm{R}$ is Gaussian,we calculate the 'end to end distance' $\bm{R}$ for each simulation,then we plot it with histogram by coordinate $(x,y,z)$ respectively and compare with the probability distribution function of $\bm{R}$ in theory. 
+\begin{lstlisting}
+%this program is used to simulate the probability distribution of Gaussian 
+classdef Idealchain<handle
+
+properties
+dimension%dimension=3
+numParticles%number of particles in polymers;
+dt%pas de temps
+numSteps% number of motion
+diffusionConst %constante diffusion
+paths %the paths of polymer;
+endToEndDist %end to end distance 
+simulation %number of simulations
+end
+
+methods
+
+%class constructor
+function obj=Idealchain(dimension,numParticles,dt,diffusionConst,numSteps,simulation)
+obj.dimension=dimension;
+obj.numParticles=numParticles;
+obj.dt=dt;
+obj.numSteps=numSteps;
+obj.diffusionConst=diffusionConst;
+obj.simulation=simulation;
+obj.paths = zeros(2,3,2);
+obj.endToEndDist=zeros(obj.simulation,3);
+end
+
+
+function Calculate(obj)
+for s=1:obj.simulation 
+%step 1:connect the chain;
+obj.paths(1,1:obj.dimension,1)=[0 0 0];%position of first beed;
+obj.paths(2,1:obj.dimension,1)=obj.paths(1,1:obj.dimension,1);
+noise=sqrt(2*obj.diffusionConst*obj.dt)*randn(1,obj.dimension);
+for i=1:obj.numParticles
+obj.paths(2,1:obj.dimension,1)=obj.paths(2,1:obj.dimension,1)+noise;%position of last beed;
+end
+
+%step 2:end :the position of beed 1 and beed end varity by time;
+for j=2:obj.numSteps
+obj.paths(1,1:obj.dimension,2)=obj.paths(1,1:obj.dimension,1)+noise;
+obj.paths(2,1:obj.dimension,2)=obj.paths(2,1:obj.dimension,1)+noise;   
+obj.paths(1,1:obj.dimension,1)=obj.paths(1,1:obj.dimension,2);
+obj.paths(2,1:obj.dimension,1)=obj.paths(2,1:obj.dimension,2);  
+end
+obj.endToEndDist(s,:)=obj.paths(2,:,2)-obj.paths(1,:,2);
+
+
+end
+
+end
+
+function Plot(obj)
+% 
+%           figure(2);
+%          plot(obj.endToEndDist);
+
+%          figure(3)
+%        [h,bins]= hist(obj.endToEndDist(:,1),50);
+%          bar(bins,h);
+%        
+
+f=@(N,R,b)(sqrt(1/(2*pi*N*b^2))*exp(-(sum(R.^2,2))./(2*N*b^2)));%PDF 
+subplot(2,2,1)
+[h, bins]=hist(obj.endToEndDist(:,1),50); h= h./sum(h); bar(bins,h),...
+hold on, 
+plot(bins,f(obj.numParticles,[bins'],1),'r')
+title('PDF on x')
+
+subplot(2,2,2)
+[h, bins]=hist(obj.endToEndDist(:,2),50); h= h./sum(h);bar(bins,h),...
+hold on, plot(bins,f(obj.numParticles,[bins'],1),'r')
+title('PDF on y')
+
+subplot(2,2,3)
+[h, bins]=hist(obj.endToEndDist(:,3),50); h= h./sum(h); bar(bins,h),...
+hold on, plot(bins,f(obj.numParticles,[bins'],1),'r')
+title('PDF on z')
+%plot(3/(2*pi*obj.numParticles*1)^1.5*exp(3*obj.R.^2/(2*obj.numParticles*1)))
+
+end
+
+end
+end 
+
+\end{lstlisting}
 \begin{figure}[H]
-	\includegraphics[width=4.2in]{PDF.eps} 
+	\includegraphics[width=6.2in]{PDF.eps} 
 	 
 	 \end{figure}
+	 \section{The bead-spring model}
+	 \paragraph{}
+	 The bead-spring model is also called Rouse Model .In this model,the single chain diffusion is represented by Brownian motion ,there is no exclude volume 	interactions between the beads and each bead experience a drag force proportional to their velocity ,then the position of the beads will satisfy the Langevin equation :
+	 \begin{equation}
+	 \frac{d\bm{R_n}}{dt}=\frac{k}{\xi}(\bm{R_{n+1}}+\bm{R_{n-1}}-2\bm{R_{n}})+\bm{g_n}
+	 \end{equation}
+	 \subsection{Rouse Model Simulation}
+	 
 \end{document}
