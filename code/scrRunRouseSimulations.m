@@ -5,20 +5,17 @@ addpath(genpath(fullfile(pwd,'..','..','Utils')));
 
 dimension           = 3;
 numParticles        = 100;
-dt                  = 0.001;
+dt                  = 0.01;
 diffusionConst      = 1;
 numSteps            = Inf;
-numSimulations      = 1;
+numSimulations      = 300;
 frictionCoefficient = 1;
 connectedBeads      = [];
 fixedBeads          = [];
-<<<<<<< HEAD
+%metBeedNum          = [1 16 32];
 metBeedNum          = [1 16 32];
-=======
-metBeedNum          = [2 14 27];
->>>>>>> 0749a1fe5c463e410ed2a63f45107acc9a3d5e8a
 b                   = 1;
-encounterDistance   = b./2;
+encounterDistance   = b./4;
 %initialize the class
 
 rouseModel = RouseModelMetTime(dimension,numParticles,dt,diffusionConst,...

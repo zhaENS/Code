@@ -1,3 +1,4 @@
+%This program is used to simulate the spring-bead model
 classdef RouseModel<handle
     properties
         dimension%dimension=1,2 or 3
@@ -55,20 +56,6 @@ classdef RouseModel<handle
                     noiseSingle(obj.fixedBeads,:) = 0;
                     
                     obj.paths(:,1:3,j) = -a*R*obj.paths(:,1:3,j-1)*obj.dt+noiseSingle +obj.paths(:,1:3,j-1);
-               
-                
-                    %               for i=2:obj.numParticles-1
-                    %                 noiseSingle = sqrt(2*obj.diffusionConst*obj.dt)*randn(1,obj.dimension);
-                    %                 obj.paths(i,:,j)=obj.paths(i,:,j-1)+obj.dt*(a*(obj.paths(i+1,:,j-1)...
-                    %                     +obj.paths(i-1,:,j-1)-2*obj.paths(i,:,j-1)))+noiseSingle;
-                    %
-                    %               end
-                    %               noiseSingle = sqrt(2*obj.diffusionConst*obj.dt)*randn(1,obj.dimension);
-                    %               obj.paths(obj.numParticles,:,j)=obj.paths(obj.numParticles,:,j-1)+obj.dt*...
-                    %                   (a*(obj.paths(obj.numParticles-1,:,j-1)-obj.paths(obj.numParticles,:,j-1)))+noiseSingle;
-                    
-                  
-                    %             end
                     
                 end
                
@@ -92,7 +79,7 @@ classdef RouseModel<handle
                 
                 set(l,'XData',obj.paths(:,1,i),'YData',obj.paths(:,2,i),'ZData',obj.paths(:,3,i));
                 
-                        pause(0.2)
+                        pause(0.5)
                 
                 drawnow
             end

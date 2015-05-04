@@ -1,3 +1,5 @@
+%This program is used to simulate the first time such that 3 beads have met
+%in each simulation
 classdef RouseModelMetTime<handle
     properties
         dimension%dimension=1,2 or 3
@@ -62,7 +64,7 @@ classdef RouseModelMetTime<handle
                 a = obj.dimension*obj.diffusionConst*obj.frictionCoefficient/obj.b(i)^2;%the spring const
                 R = RouseMatrix(obj.numParticles, obj.connectedBeads, obj.fixedBeads);
                 step     = 2;
-                while ~exitFlag && step<= -obj.numSteps
+                while ~exitFlag && step <= obj.numSteps
                     
                  
                     
@@ -71,11 +73,16 @@ classdef RouseModelMetTime<handle
                     % zero out noise for fixed particles
                     noiseSingle(obj.fixedBeads,:) = 0;
                     
-                    obj.paths(:,:,2)   = -a/obj.frictionCoefficient*R*obj.paths(:,:,1)*obj.dt+noiseSingle +obj.paths(:,:,1);
+                    obj.paths(:,:,2) = -a/obj.frictionCoefficient*R*obj.paths(:,:,1)*obj.dt+noiseSingle +obj.paths(:,:,1);
                     obj.paths(:,:,1) = obj.paths(:,:,2); 
-                    D = pdist2mex(obj.paths(obj.metBeedNum,:,2)',obj.paths(obj.metBeedNum,:,2)','euc',[],[],[]);%calculate the distance
+                    centerMasse = 1/3*sum(obj.paths(obj.metBeedNum,:,2));
+                    A           = zeros(numel(obj.metBeedNum)+1,3);
+                    A(1:3,1:3)  = obj.paths(obj.metBeedNum,:,2);
+                    A(end,1:3)  = centerMasse;
+                  %  D = pdist2mex(obj.paths(obj.metBeedNum,:,2)',obj.paths(obj.metBeedNum,:,2)','euc',[],[],[]);%calculate the distance
+                   D = pdist2mex(A',A','euc',[],[],[],[]);
  %                    D = Distance(obj.paths(1,:,1),obj.paths(obj.numParticles,:,1),obj.paths(obj.metBeedNum,:,1));
-                    exitFlag = all(D(:)<obj.encounterDistance(i));
+                    exitFlag = all(D(end,:)<obj.encounterDistance(i));
  %                    exitFlag = all([D(1),D(2),D(3)] < obj.encounterDistance(i));
                     
                     if exitFlag

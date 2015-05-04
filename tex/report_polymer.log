@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  30 APR 2015 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  4 MAY 2015 13:24
 entering extended mode
 **report_polymer.tex
 (report_polymer.tex
@@ -972,40 +972,103 @@ Overfull \hbox (103.07378pt too wide) in paragraph at lines 227--228
 [][] 
  []
 
-[5] [6 <./PDF-eps-converted-to.pdf>] (report_polymer.aux) ) 
+[5] [6 <./PDF-eps-converted-to.pdf>]
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 257--258
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.60376pt too wide) in paragraph at lines 258--259
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.40356pt too wide) in paragraph at lines 266--267
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 287--288
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 293--295
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (91.80444pt too wide) in paragraph at lines 297--298
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (240.60596pt too wide) in paragraph at lines 298--300
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[7]
+Overfull \hbox (101.40454pt too wide) in paragraph at lines 303--305
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (43.80396pt too wide) in paragraph at lines 313--314
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (183.00537pt too wide) in paragraph at lines 322--323
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Overfull \hbox (72.60425pt too wide) in paragraph at lines 325--327
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][] 
+ []
+
+[8] (report_polymer.aux) ) 
 Here is how much of TeX's memory you used:
- 7368 strings out of 493698
- 97802 string characters out of 3144418
+ 7385 strings out of 493698
+ 98079 string characters out of 3144418
  217672 words of memory out of 3000000
- 10539 multiletter control sequences out of 15000+200000
+ 10556 multiletter control sequences out of 15000+200000
  54950 words of font info for 69 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  42i,12n,42p,361b,1648s stack positions out of 5000i,500n,10000p,200000b,50000s
-{d:/Program Files/Mi
-KTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/Program Files/MiKTeX 2.9/fonts/en
-c/dvips/lm/lm-rm.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.
-enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{d:/Program Fi
-les/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}<d:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmbx5.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmmi8.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib1
-0.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib5.p
-fb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb>
-<d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbsy7.pfb><d:/Program Files
-/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><d:/Program Files/MiKTeX 2.9/fonts
-/type1/public/lm/lmbx7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
-mex10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><d:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><d:/Program Files/MiKTeX 
-2.9/fonts/type1/public/lm/lmmib7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmr10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
-><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><d:/Program Files
-/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><d:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmsy10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/
-ucrr8a.pfb>
-Output written on report_polymer.pdf (6 pages, 278781 bytes).
+{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
+thsy.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{d:/Program 
+Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{d:/Program Files/MiKTeX 2.9/
+fonts/enc/dvips/fontname/8r.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm
+/lm-mathex.enc}<d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx5.pfb><d
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><d:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><d:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><d:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cmextra/cmmib7.pfb><d:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmbsy7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmbx12.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx7.pfb><d:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><d:/Program Files/MiKTe
+X 2.9/fonts/type1/public/lm/lmmi10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmmi7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmib7.
+pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><d:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><d:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmr17.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmr7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><d:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on report_polymer.pdf (8 pages, 282192 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
