@@ -107,6 +107,7 @@ classdef RouseModelMetTime<handle
             for i=1:length(obj.b)
                 figure(i+1)
                 [h,bins]=hist(obj.encounterTime(:,i),50);
+                h=h./trapz(bins,h);
                 bar(bins,h)
             end
         end

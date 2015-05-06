@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  4 MAY 2015 13:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  6 MAY 2015 10:59
 entering extended mode
 **report_polymer.tex
 (report_polymer.tex
@@ -951,28 +951,31 @@ Overfull \hbox (24.60376pt too wide) in paragraph at lines 218--220
 ][][][][][][][] 
  []
 
-Package epstopdf Info: Source file: <PDF.eps>
-(epstopdf)                    date: 2015-04-29 18:26:27
-(epstopdf)                    size: 28299 bytes
-(epstopdf)             Output file: <PDF-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-29 18:27:13
-(epstopdf)                    size: 8589 bytes
-(epstopdf)             Command: <epstopdf --outfile=PDF-eps-converted-to.pdf PD
-F.eps>
+Package epstopdf Info: Source file: <MetTime3.eps>
+(epstopdf)                    date: 2015-05-06 10:27:40
+(epstopdf)                    size: 13779 bytes
+(epstopdf)             Output file: <MetTime3-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=MetTime3-eps-converted-to.p
+df MetTime3.eps>
 (epstopdf)             \includegraphics on input line 227.
-Package epstopdf Info: Output file is already uptodate.
-<PDF-eps-converted-to.pdf, id=38, 963.6pt x 683.55376pt>
-File: PDF-eps-converted-to.pdf Graphic file (type pdf)
+runsystem(epstopdf --outfile=MetTime3-eps-converted-to.pdf MetTime3.eps)...exec
+uted (allowed).
 
-<use PDF-eps-converted-to.pdf>
-Package pdftex.def Info: PDF-eps-converted-to.pdf used on input line 227.
-(pdftex.def)             Requested size: 448.07378pt x 317.84921pt.
+Package epstopdf Info: Result file: <MetTime3-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-06 10:59:03
+(epstopdf)                    size: 4447 bytes.
+<MetTime3-eps-converted-to.pdf, id=38, 420.57124pt x 316.18124pt>
+File: MetTime3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use MetTime3-eps-converted-to.pdf>
+Package pdftex.def Info: MetTime3-eps-converted-to.pdf used on input line 227.
+(pdftex.def)             Requested size: 448.07378pt x 336.86322pt.
 
 Overfull \hbox (103.07378pt too wide) in paragraph at lines 227--228
 [][] 
  []
 
-[5] [6 <./PDF-eps-converted-to.pdf>]
+[5] [6 <./MetTime3-eps-converted-to.pdf>]
 Overfull \hbox (63.00415pt too wide) in paragraph at lines 257--258
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1039,7 +1042,7 @@ Overfull \hbox (72.60425pt too wide) in paragraph at lines 325--327
 [8] (report_polymer.aux) ) 
 Here is how much of TeX's memory you used:
  7385 strings out of 493698
- 98079 string characters out of 3144418
+ 98104 string characters out of 3144418
  217672 words of memory out of 3000000
  10556 multiletter control sequences out of 15000+200000
  54950 words of font info for 69 fonts, out of 3000000 for 9000
@@ -1066,9 +1069,9 @@ les/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><d:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/lm/lmr17.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
 /lmr7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><d:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on report_polymer.pdf (8 pages, 282192 bytes).
+Output written on report_polymer.pdf (8 pages, 278213 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
