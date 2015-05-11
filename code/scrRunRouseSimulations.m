@@ -8,14 +8,14 @@ numParticles        = 100;
 dt                  = 0.01;
 diffusionConst      = 1;
 numSteps            = Inf;
-numSimulations      = 1000;
+numSimulations      = 200;
 frictionCoefficient = 1;
 connectedBeads      = [];
 fixedBeads          = [];
 %metBeedNum          = [1 16 32];
 metBeedNum          = [1 16 32];
 b                   = 1;
-encounterDistance   = b./5;
+encounterDistance   = b./4;
 %initialize the class
 
 rouseModel = RouseModelMetTime(dimension,numParticles,dt,diffusionConst,...
