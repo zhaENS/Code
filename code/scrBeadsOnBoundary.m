@@ -1,6 +1,6 @@
 
-%addpath(genpath(fullfile(pwd,'..','..','PolymerChainDynamics')));
-addpath(genpath(fullfile(pwd,'..','..','utils')));
+addpath(genpath(fullfile(pwd,'..','..','PolymerChainDynamics')));
+%addpath(genpath(fullfile(pwd,'..','..','utils')));
 dp = DomainHandlerParams;
 dp.domainShape    = 'sphere';
 dp.domainWidth    = sqrt(14);
