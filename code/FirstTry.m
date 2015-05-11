@@ -24,7 +24,7 @@ methods
      
     
     function Calculate(obj)
-        
+        %Initial position 
         for j=1
             noise = [zeros(1,obj.dimension);...
                      sqrt(2*obj.diffusionConst*obj.dt)*randn(obj.numParticles-1,obj.dimension)];

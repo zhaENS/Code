@@ -37,7 +37,7 @@ methods
         obj.paths(2,1:obj.dimension,1)=obj.paths(2,1:obj.dimension,1)+noise;%position of last beed;
         end
         
-        %step 2:end :the position of beed 1 and beed end varity by time;
+        %step 2:end :the position of beedStart and beedEnd varity by time;
         for j=2:obj.numSteps
                 obj.paths(1,1:obj.dimension,2)=obj.paths(1,1:obj.dimension,1)+noise;
                 obj.paths(2,1:obj.dimension,2)=obj.paths(2,1:obj.dimension,1)+noise;   
