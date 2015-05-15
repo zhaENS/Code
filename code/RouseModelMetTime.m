@@ -10,7 +10,7 @@ classdef RouseModelMetTime<handle
         diffusionConst %constante diffusion
         paths %the paths of polymer;
         frictionCoefficient;%the frictionCoefficient of a bead;
-        metBeedNum; %the number of the beed which have met with the first and last beed;
+        metBeadNum; %the number of the beed which have met with the first and last beed;
         connectedBeads %an n by two array with pair wise bead numbers to connect
         fixedBeads %numBeads of beads that do not move
         encounterDistance%the distance between 3 beeds such that they have met
@@ -24,7 +24,7 @@ classdef RouseModelMetTime<handle
         
         function obj=RouseModelMetTime(dimension,numParticles,dt,diffusionConst,...
                 numSteps,frictionCoefficient,connectedBeads, fixedBeads ,...
-                numSimulations,metBeedNum,b,encounterDistance)
+                numSimulations,metBeadNum,b,encounterDistance)
             
             obj.dimension = dimension;
             obj.numParticles = numParticles;
@@ -36,18 +36,18 @@ classdef RouseModelMetTime<handle
             obj.fixedBeads= fixedBeads;
             obj.connectedBeads = connectedBeads ;
             obj.numSimulations = numSimulations;
-            obj.metBeedNum = metBeedNum;
+            obj.metBeadNum = metBeadNum;
             obj.b = b;
             obj.encounterDistance = encounterDistance;
-            obj.encounterTime = zeros(obj.numSimulations,length(obj.b));
+            obj.encounterTime = zeros(obj.numSimulations,size(obj.metBeadNum,1));
         
         end
         
         
         function Simulation(obj)
             % set initial position
-       for i=1:length(obj.b)
-  
+      
+            for i = 1:size(obj.metBeadNum,1)
             for s = 1:obj.numSimulations
                 t1=clock;
                 exitFlag = false;
@@ -61,7 +61,7 @@ classdef RouseModelMetTime<handle
                     
                 end
                 
-                a = obj.dimension*obj.diffusionConst*obj.frictionCoefficient/obj.b(i)^2;%the spring const
+                a = obj.dimension*obj.diffusionConst*obj.frictionCoefficient/obj.b^2;%the spring const
                 R = RouseMatrix(obj.numParticles, obj.connectedBeads, obj.fixedBeads);
                 step     = 2;
                 while ~exitFlag && step <= obj.numSteps
@@ -75,14 +75,14 @@ classdef RouseModelMetTime<handle
                     
                     obj.paths(:,:,2) = -a/obj.frictionCoefficient*R*obj.paths(:,:,1)*obj.dt+noiseSingle +obj.paths(:,:,1);
                     obj.paths(:,:,1) = obj.paths(:,:,2); 
-                    centerMasse = 1/3*sum(obj.paths(obj.metBeedNum,:,2));
-                    A           = zeros(numel(obj.metBeedNum)+1,3);
-                    A(1:3,1:3)  = obj.paths(obj.metBeedNum,:,2);
+                    centerMasse = 1/3*sum(obj.paths(obj.metBeadNum(i,:),:,2));
+                    A           = zeros(numel(obj.metBeadNum(i,:))+1,3);
+                    A(1:3,1:3)  = obj.paths(obj.metBeadNum(i,:),:,2);
                     A(end,1:3)  = centerMasse;
-                  %  D = pdist2mex(obj.paths(obj.metBeedNum,:,2)',obj.paths(obj.metBeedNum,:,2)','euc',[],[],[]);%calculate the distance
+                  %  D = pdist2mex(obj.paths(obj.metBeadNum,:,2)',obj.paths(obj.metBeadNum,:,2)','euc',[],[],[]);%calculate the distance
                    D = pdist2mex(A',A','euc',[],[],[],[]);
- %                    D = Distance(obj.paths(1,:,1),obj.paths(obj.numParticles,:,1),obj.paths(obj.metBeedNum,:,1));
-                    exitFlag = all(D(end,:)<obj.encounterDistance(i));
+ %                    D = Distance(obj.paths(1,:,1),obj.paths(obj.numParticles,:,1),obj.paths(obj.metBeadNum,:,1));
+                    exitFlag = all(D(end,:)<obj.encounterDistance);
  %                    exitFlag = all([D(1),D(2),D(3)] < obj.encounterDistance(i));
                     
                     if exitFlag
@@ -98,18 +98,20 @@ classdef RouseModelMetTime<handle
                 sprintf('%s%s%s','simulation ',num2str(s),' is done')
                 sprintf('the time of simulation %s is %s',num2str(s),num2str(etime(t2,t1)))
             end
-        end
+            end
     end
         
         
         function Plot(obj)
             
-            for i=1:length(obj.b)
-                figure(i+1),
+           for i = 1:size(obj.metBeadNum,1)
+                figure(i+1)
                 [h,bins]=hist(obj.encounterTime(:,i),50);
                 h=h./trapz(bins,h);
                 bar(bins,h)
-            end
+                title(['Simulation of MeanEncouterTime,the metBeads are ',num2str(obj.metBeadNum(i,:))]);
+           end
+            
         end
        
     end
