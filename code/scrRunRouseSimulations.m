@@ -4,7 +4,7 @@
 addpath(genpath(fullfile(pwd,'..','..','Utils')));
 
 dimension           = 3;
-numParticles        = 200;
+numParticles        = 32;
 dt                  = 0.01;
 diffusionConst      = 1;
 numSteps            = 100;
