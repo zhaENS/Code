@@ -109,7 +109,7 @@ classdef RouseModelMetTime<handle
                 [h,bins]=hist(obj.encounterTime(:,i),50);
                 h=h./trapz(bins,h);
                 bar(bins,h)
-                title(['Simulation of MeanEncouterTime,the metBeads are ',num2str(obj.metBeadNum(i,:))]);
+                title(['Simulation of MeanEncouterTime,the metBeads are ',num2str(obj.metBeadNum(i,:))])
            end
             
         end

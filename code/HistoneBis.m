@@ -20,7 +20,6 @@ classdef HistoneBis<handle
         prevPosSlope % position between vertices- used for transformation
         prevPosVertex1
         prevPosVertex2
-        
         params = HistoneParams;
                     
     end

@@ -8,82 +8,82 @@ chainPath = points(1,:);
 % initialize the BrownianBridge class 
 noiseSTD = sqrt(2*dp.dt*dp.diffusionConst);
 bb = BrownianBridge('realizations',1,'dimension',3,'constructionType','normal','noiseSTD',noiseSTD);
-for bIdx = 1:(numel(beads)-1)
-    % build a Brownian bridge between any two points on the boundary
-    numPoints            = (beads(bIdx+1)-beads(bIdx)+1);
-    startPoint           = points(bIdx,:);
-    endPoint             = points(bIdx+1,:);
-    bb.params.numPoints  = numPoints;
-    bb.params.startPoint = startPoint;
-    bb.params.endPoint   = endPoint;
-    bb.GetBridge;
-    tempPath = bb.paths{1};
-    % check that the points are inside the domain 
-        inDomain = domainClass.InDomain(tempPath);
-        f        = find(~inDomain);
-        for fIdx = 1:numel(f)
-            pInDomain = false;
-            while ~pInDomain 
-                tempPath(f(fIdx),:) = tempPath(f(fIdx)-1,:)+randn(1,dp.dimension).*noiseSTD;
-                pInDomain = domainClass.InDomain(tempPath(f(fIdx),:));
-            end
-        end               
-    n = size(chainPath,1);
-    chainPath(n+1:n+numPoints-1,:)= tempPath(2:end,:);
-    bb.Reset;    
-end
-    
-% link the the ends of the chain 
-numPoints = beads(1);    
-startPath = [];
-if beads(1)~=1
-   
-    pos1      = chainPath(1,:);
-    for bIdx = 1:numPoints        
-        inDomain = false;
-        while ~inDomain 
-             pos2 = pos1 + randn(1,dp.dimension).*noiseSTD;
-             inDomain = domainClass.InDomain(pos2);            
-        end
-        startPath(bIdx,:) = pos1;
-        pos1 = pos2;
-        
-    end
-    startPath = flipud(startPath(2:end,:)); % omit the first point 
-end
-
-% connect the end
-numPoints = numBeads-beads(end)+1;  
-endPath   = [];
-if beads(end)~=numBeads
-   
-    pos1     = chainPath(1,:);
-    for bIdx = 1:numPoints        
-        inDomain = false;
-        while ~inDomain 
-             pos2 = pos1 + randn(1,dp.dimension).*noiseSTD;
-             inDomain = domainClass.InDomain(pos2);            
-        end
-        endPath(bIdx,:) = pos1;
-        pos1 = pos2;
-        
-    end
-    endPath = (endPath(2:end,:)); % omit the first point 
-end
-
-chainPath = [startPath; chainPath; endPath];
-toc
-figure;
-[sx, sy, sz]= sphere(15);
-sx = sx*dp.domainWidth;
-sy = sy*dp.domainWidth;
-sz = sz*dp.domainWidth;
-daspect([1 1 1]), cameratoolbar
-mesh(sx,sy,sz,'FaceColor','none','EdgeColor','m'), hold on
-plot3(chainPath(:,1),chainPath(:,2),chainPath(:,3),'Color',[rand rand rand],'LineWidth',4);
-
-plot3(chainPath(beads,1), chainPath(beads,2),chainPath(beads,3),'o','MarkerSize',7,'MarkerFaceColor','r','LineStyle','none');
-% text(chainPath(beads,1)+0.001,chainPath(beads,2)-0.01,chainPath(beads,3)+0.002,num2str(beads'),'FontSize',15);
+% for bIdx = 1:(numel(beads)-1)
+%     % build a Brownian bridge between any two points on the boundary
+%     numPoints            = (beads(bIdx+1)-beads(bIdx)+1);
+%     startPoint           = points(bIdx,:);
+%     endPoint             = points(bIdx+1,:);
+%     bb.params.numPoints  = numPoints;
+%     bb.params.startPoint = startPoint;
+%     bb.params.endPoint   = endPoint;
+%     bb.GetBridge;
+%     tempPath = bb.paths{1};
+%     % check that the points are inside the domain 
+%         inDomain = domainClass.InDomain(tempPath);
+%         f        = find(~inDomain);
+%         for fIdx = 1:numel(f)
+%             pInDomain = false;
+%             while ~pInDomain 
+%                 tempPath(f(fIdx),:) = tempPath(f(fIdx)-1,:)+randn(1,dp.dimension).*noiseSTD;
+%                 pInDomain = domainClass.InDomain(tempPath(f(fIdx),:));
+%             end
+%         end               
+%     n = size(chainPath,1);
+%     chainPath(n+1:n+numPoints-1,:)= tempPath(2:end,:);
+%     bb.Reset;    
+% end
+%     
+% % link the the ends of the chain 
+% numPoints = beads(1);    
+% startPath = [];
+% if beads(1)~=1
+%    
+%     pos1      = chainPath(1,:);
+%     for bIdx = 1:numPoints        
+%         inDomain = false;
+%         while ~inDomain 
+%              pos2 = pos1 + randn(1,dp.dimension).*noiseSTD;
+%              inDomain = domainClass.InDomain(pos2);            
+%         end
+%         startPath(bIdx,:) = pos1;
+%         pos1 = pos2;
+%         
+%     end
+%     startPath = flipud(startPath(2:end,:)); % omit the first point 
+% end
+% 
+% % connect the end
+% numPoints = numBeads-beads(end)+1;  
+% endPath   = [];
+% if beads(end)~=numBeads
+%    
+%     pos1     = chainPath(1,:);
+%     for bIdx = 1:numPoints        
+%         inDomain = false;
+%         while ~inDomain 
+%              pos2 = pos1 + randn(1,dp.dimension).*noiseSTD;
+%              inDomain = domainClass.InDomain(pos2);            
+%         end
+%         endPath(bIdx,:) = pos1;
+%         pos1 = pos2;
+%         
+%     end
+%     endPath = (endPath(2:end,:)); % omit the first point 
+% end
+% 
+% chainPath = [startPath; chainPath; endPath];
+% toc
+% figure;
+% [sx, sy, sz]= sphere(15);
+% sx = sx*dp.domainWidth;
+% sy = sy*dp.domainWidth;
+% sz = sz*dp.domainWidth;
+% daspect([1 1 1]), cameratoolbar
+% mesh(sx,sy,sz,'FaceColor','none','EdgeColor','m'), hold on
+% plot3(chainPath(:,1),chainPath(:,2),chainPath(:,3),'Color',[rand rand rand],'LineWidth',4);
+% 
+% plot3(chainPath(beads,1), chainPath(beads,2),chainPath(beads,3),'o','MarkerSize',7,'MarkerFaceColor','r','LineStyle','none');
+% % text(chainPath(beads,1)+0.001,chainPath(beads,2)-0.01,chainPath(beads,3)+0.002,num2str(beads'),'FontSize',15);
 
 
 tic
