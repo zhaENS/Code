@@ -33,7 +33,7 @@ r = RouseSimulatorFramework(simulatorParams);
 initialChainPosition     = initialChainPosition{1};
 
 % Initialize histones with the chain position
-histoneForce = ForceManagerParams('dt',simulatorParams.simulator.dt,'diffusionConst',0.1,...
+histoneForce = ForceManagerParams('dt',simulatorParams.simulator.dt,'diffusionConst',0.01,...
            'lennardJonesForce',false,'diffusionForce',true,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01);
            
 histoneParams = HistoneParams('numHistones',2,'forceParams',histoneForce);
@@ -98,28 +98,63 @@ for sIdx = 1:numSteps
            k(vIdx,kIdx)  = (posHistone(sIdx-1,vIdx)-posHistone(sIdx-1,kIdx))/(v(sIdx,vIdx)-v(sIdx,kIdx));
                % find colliding histones
             [hist1,hist2] = find(k(vIdx,kIdx)>0 & k(vIdx,kIdx)<=simulatorParams.simulator.dt);
-            if ~isempty(hist1)
+           if ~isempty(hist1)
                 disp('collision')
-             %transforme the coordinate of particles collision to 3D;
-            curPos(vIdx,:,sIdx-1) =  (posHistone(sIdx-1,vIdx)-edgeLengthTotal(sIdx-1,curPosVertex1(sIdx-1,vIdx)))...
-                                      /edgeLength(sIdx-1,curPosVertex1(sIdx,vIdx))...
-                                      *(chainPos(curPosVertex2(sIdx-1,vIdx),:)-chainPos(curPosVertex1(sIdx-1,vIdx),:))...
-                                      +chainPos(curPosVertex1(sIdx-1,vIdx),:);
-            curPos(kIdx,:,sIdx-1) =  (posHistone(sIdx-1,kIdx)-edgeLengthTotal(sIdx-1,curPosVertex1(sIdx-1,kIdx)))...
-                                      /edgeLength(sIdx-1,curPosVertex1(sIdx,kIdx))...
-                                      *(chainPos(curPosVertex2(sIdx-1,kIdx),:)-chainPos(curPosVertex1(sIdx-1,kIdx),:))...
-                                      +chainPos(curPosVertex1(sIdx-1,kIdx),:);
+            %collision point
+            posHistone(sIdx,vIdx) = posHistone(sIdx-1,vIdx)+k(vIdx,kIdx)*v(sIdx,vIdx);
+            posHistone(sIdx,kIdx) = posHistone(sIdx-1,kIdx)+k(vIdx,kIdx)*v(sIdx,kIdx);
              %reflection
-             
+             timeRest = simulatorParams.simulator.dt-k(vIdx,kIdx);
+             if sign(v(sIdx,vIdx))~=sign(v(sIdx,kIdx))
+                 %if 2 collision points have velocity opponent,change their
+                 %direction ;
+                posHistone(sIdx,vIdx) = posHistone(sIdx,vIdx)-timeRest*v(sIdx,vIdx);
+                posHistone(sIdx,kIdx) = posHistone(sIdx,kIdx)-timeRest*v(sIdx,kIdx);            
+             else if abs(v(sIdx,vIdx)) > abs(v(sIdx,kIdx))
+                 %if not,change the direction of velocity which is
+                 %faster than the other
+                posHistone(sIdx,vIdx) = posHistone(sIdx,vIdx)-timeRest*v(sIdx,vIdx);
+                posHistone(sIdx,kIdx) = posHistone(sIdx,kIdx)+timeRest*v(sIdx,kIdx);
+                 else
+                posHistone(sIdx,vIdx) = posHistone(sIdx,vIdx)+timeRest*v(sIdx,vIdx);
+                posHistone(sIdx,kIdx) = posHistone(sIdx,kIdx)-timeRest*v(sIdx,kIdx);
+                 end
+             end
+             %transforme the coordinate of particles collision to 3D;
+             colliIndex = [vIdx kIdx];
+            
+              curPos(colliIndex,:,sIdx) =  (posHistone(sIdx,colliIndex)-edgeLengthTotal(sIdx,curPosVertex1(sIdx,colliIndex)))...
+                                      /edgeLength(sIdx,curPosVertex1(sIdx,colliIndex))...
+                                      *(chainPos(curPosVertex2(sIdx,colliIndex),:)-chainPos(curPosVertex1(sIdx,colliIndex),:))...
+                                      +chainPos(curPosVertex1(sIdx,colliIndex),:);
+              %verify after reflection,the points collisions are always in
+              %the same segement;
+              
+              %the case that one point passes the right vertice;
+            Idx1 = size(max(posHistone(sIdx,vIdx),posHistone(sIdx,kIdx)),2);
+            Idx2 = size(min(posHistone(sIdx,vIdx),posHistone(sIdx,kIdx)),2);
+            if posHistone(sIdx,Idx1)>edgeLengthTotal(sIdx,curPosVertex2(sIdx,Idx2)) 
+            curPos(Idx1,:,sIdx) = (posHistone(sIdx,Idx1)-edgeLengthTotal(sIdx,curPosVertex1(sIdx,Idx1+1)))...
+                                  /edgeLength(sIdx,curPosVertex1(sIdx,Idx1+1))...
+                                  *(chainPos(curPosVertex2(sIdx,Idx1+1),:)-chainPos(curPosVertex1(sIdx,Idx1+1),:))...
+                                      +chainPos(curPosVertex1(sIdx,Idx1+1),:);
+                
+            
             end
+            %the case that one point passes the left vertice;
+           
+            if posHistone(sIdx,Idx2)<edgeLengthTotal(sIdx,curPosVertex1(sIdx,Idx1))
+                 curPos(Idx2,:,sIdx) = (posHistone(sIdx,Idx2)-edgeLengthTotal(sIdx,curPosVertex1(sIdx,Idx2)))...
+                                  /edgeLength(sIdx,curPosVertex1(sIdx,max(Idx2-1,1)))...
+                                  *(chainPos(curPosVertex2(sIdx,Idx2),:)-chainPos(curPosVertex1(sIdx,Idx2),:))...
+                                      +chainPos(curPosVertex1(sIdx,Idx2),:);
+                  
+                  
+            end
+           end
+           
        end
    end
-   %k=(x2(t)-x1(t))/(v1(t+deltaT)-v2(t+deltaT))
-    % find colliding histones
-%             [hist1,hist2] = find(k>0 & k<=simulatorParams.simulator.dt);
-%             if ~isempty(hist1)
-%                 disp('collision')
-%             end
     end
         
 %   update histone graphics    
