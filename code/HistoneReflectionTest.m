@@ -18,7 +18,7 @@ dp(1)        = DomainHandlerParams('domainShape','sphere','forceParams',sphereFo
     'domainWidth',3,'dimension',simulatorParams.simulator.dimension);
 chainForces = ForceManagerParams('dt',simulatorParams.simulator.dt,'springForce',false,...
     'bendingElasticityForce',false,'bendingConst',1,'springConst',0.5);
-cp          = ChainParams('numBeads',7,'initializeInDomain',1,'forceParams',chainForces);
+cp          = ChainParams('numBeads',4,'initializeInDomain',1,'forceParams',chainForces);
 % cp(2)     = ChainParams('numBeads',100,'initializeInDomain',1,'forceParams',chainForces);
 
 % register the object parameters in the simulator framework
@@ -36,7 +36,7 @@ initialChainPosition     = initialChainPosition{1};
 histoneForce = ForceManagerParams('dt',simulatorParams.simulator.dt,'diffusionConst',0.001,...
            'lennardJonesForce',false,'diffusionForce',true,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01);
            
-histoneParams = HistoneParams('numHistones',5,'forceParams',histoneForce);
+histoneParams = HistoneParams('numHistones',4,'forceParams',histoneForce);
 h             = HistoneBis(histoneParams);
 
 h.Initialize(initialChainPosition);
@@ -92,17 +92,17 @@ Ite = 3;
 if sIdx >1
     %the velocity of each histone;
    v(sIdx,:) = (posHistone(sIdx,:)-posHistone(sIdx-1,:))/simulatorParams.simulator.dt;  
- 
-
+  
            k    = zeros(histoneParams.numHistones,histoneParams.numHistones);
            ite  = 1;
            cols =zeros(1,histoneParams.numHistones);
       timeRem   = simulatorParams.simulator.dt*ones(1,histoneParams.numHistones);
     
-    while ite <=Ite 
+    while ite <=Ite && min(timeRem)>0
+        t = 1;
        for vIdx = 1:histoneParams.numHistones
       
-            for kIdx = (vIdx+1):histoneParams.numHistones
+            for kIdx = 1:histoneParams.numHistones
                  
            %stock all of time k that each 2 histones are colliding for each
            %row;
@@ -111,11 +111,12 @@ if sIdx >1
             end
    
        
-          column                = find(k(vIdx,:)>0 & k(vIdx,:)< timeRem(vIdx));
+           column               = find(k(vIdx,:)>0 & k(vIdx,:)<timeRem(vIdx));
            
            %detect collision
           if ~isempty(column)
-            disp('collision')
+            sprintf('collision %s',int2str(t))
+             t = t+1;
             
            %find the min time that 2 histones are colliding in each row;
           
@@ -128,51 +129,40 @@ if sIdx >1
                 end
             end
            
+          
             
-                                                                
             %collision point
             posHistoneCol1  = posHistone(sIdx-1,vIdx)+val*v(sIdx,vIdx);
             posHistoneCol2  = posHistone(sIdx-1,cols(vIdx))+val*v(sIdx,cols(vIdx));
+         
+            %the position of all the histones at the same time when 2 of them are colliding;     
+             posHistone(sIdx-1,:)= posHistone(sIdx-1,:)+val*v(sIdx,:);
            
             %update the v after they are colliding;
             timeRem(vIdx)      = timeRem(vIdx)-val;
-            v(sIdx,vIdx)       = (posHistone(sIdx,vIdx)-posHistoneCol1)/timeRem(vIdx);
+            v(sIdx,vIdx)       =  (posHistone(sIdx,vIdx)-posHistoneCol1)/timeRem(vIdx);
             v(sIdx,cols(vIdx)) = (posHistone(sIdx,cols(vIdx))-posHistoneCol2)/timeRem(vIdx);
             
-           
+       
+                                                                
        
             %reflection
             %if 2 collision points have velocity opponent,change their direction ;
            
             if sign(v(sIdx,vIdx))~=sign(v(sIdx,cols(vIdx)))
-              posHistone(sIdx,vIdx) =  posHistoneCol1-timeRem(vIdx)*v(sIdx,vIdx);
-              posHistone(sIdx,cols(vIdx)) =  posHistoneCol2-timeRem(vIdx)*v(sIdx,cols(vIdx));            
+              posHistone(sIdx-1,vIdx) =  posHistoneCol1-timeRem(vIdx)*v(sIdx,vIdx);
+              posHistone(sIdx-1,cols(vIdx)) =  posHistoneCol2-timeRem(vIdx)*v(sIdx,cols(vIdx));            
              else if abs(v(sIdx,vIdx)) > abs(v(sIdx,cols(vIdx)))
              %if not,change the direction of velocity which is
              %faster than the other
-                posHistone(sIdx,vIdx)       =  posHistoneCol1-timeRem(vIdx)*v(sIdx,vIdx);
-                posHistone(sIdx,cols(vIdx)) =  posHistoneCol2+timeRem(vIdx)*v(sIdx,cols(vIdx));
+                posHistone(sIdx-1,vIdx)       =  posHistoneCol1-timeRem(vIdx)*v(sIdx,vIdx);
+                posHistone(sIdx-1,cols(vIdx)) =  posHistoneCol2+timeRem(vIdx)*v(sIdx,cols(vIdx));
                  else
-                posHistone(sIdx,vIdx)       = posHistoneCol1+timeRem(vIdx)*v(sIdx,vIdx);
-                posHistone(sIdx,cols(vIdx)) = posHistoneCol2-timeRem(vIdx)*v(sIdx,cols(vIdx));
+                posHistone(sIdx-1,vIdx)       = posHistoneCol1+timeRem(vIdx)*v(sIdx,vIdx);
+                posHistone(sIdx-1,cols(vIdx)) = posHistoneCol2-timeRem(vIdx)*v(sIdx,cols(vIdx));
                  end
             end
-            
-            
-            %update the position
-          
-            posHistone(sIdx-1,vIdx)       = posHistone(sIdx,vIdx);
-            posHistone(sIdx-1,cols(vIdx)) = posHistone(sIdx,cols(vIdx));
-             
-         
-
-            %transforme the coordinate of particles collision to 3D;
-               colliIndex = [vIdx cols(vIdx)];
-               curPos(colliIndex,:,sIdx) =  (posHistone(sIdx,colliIndex)-edgeLengthTotal(sIdx,curPosVertex1(sIdx,colliIndex)))...
-                                       /edgeLength(sIdx,curPosVertex1(sIdx,colliIndex))...
-                                       *(chainPos(curPosVertex2(sIdx,colliIndex),:)-chainPos(curPosVertex1(sIdx,colliIndex),:))...
-                                       +chainPos(curPosVertex1(sIdx,colliIndex),:);
-
+           
 %              %verify after reflection,the points collisions are always in
 %               %the same segement;
 %    
@@ -210,11 +200,20 @@ if sIdx >1
           end
        
        end
-  
+       
+ %transform the coordinate into 3D;
+     curPos(:,:,sIdx-1) =  bsxfun(@times,((posHistone(sIdx-1,:)-edgeLengthTotal(sIdx-1,curPosVertex1(sIdx-1,:)))...
+                                        ./edgeLength(sIdx,curPosVertex1(sIdx-1,:)))',...
+                                        (chainPos(curPosVertex2(sIdx-1,:),:)-chainPos(curPosVertex1(sIdx-1,:),:)))...
+                                        +chainPos(curPosVertex1(sIdx-1,:),:);
+                                    
+                                  
        ite = ite+1;
-     end
+    end
     
-end      
+     posHistone(sIdx,:) =posHistone(sIdx-1,:);
+    
+      
     
 
 
@@ -222,18 +221,19 @@ end
 %   update histone graphics    
 
     if simulatorParams.simulator.showSimulation
-          if sIdx >1
-         delete(b(1:histoneParams.numHistones));
-         end
+%           if sIdx >1
+%          delete(b(1:histoneParams.numHistones));
+%          end
 
 %         set(histHandle,'XData',h.curPos(:,1),'YData',h.curPos(:,2),'ZData',h.curPos(:,3));
 %         text(h.curPos(beads,1)+0.001,h.curPos(beads,2)-0.01,h.curPos(beads,3)+0.002,num2str(beads'),'FontSize',15);
          set(histHandle,'XData',curPos(:,1,sIdx),'YData',curPos(:,2,sIdx),'ZData',curPos(:,3,sIdx));
-         text(curPos(beads,1,sIdx)+0.001,curPos(beads,2,sIdx)-0.01,curPos(beads,3,sIdx)+0.002,num2str(beads'),'FontSize',15);
-        b = findobj(gca,'Type','Text');
+        %text(curPos(beads,1,sIdx)+0.001,curPos(beads,2,sIdx)-0.01,curPos(beads,3,sIdx)+0.002,num2str(beads'),'FontSize',15);
+        %b = findobj(gca,'Type','Text');
        
         drawnow
     end
+end
 end
 end
  
