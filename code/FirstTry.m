@@ -2,39 +2,34 @@
 classdef FirstTry<handle
 
 properties
-dimension%dimension=1,2 or 3
-numParticles%number of particles in polymers;
-dt%pas de temps
-numSteps% number of motion
-diffusionConst %constante diffusion
-paths %the paths of polymer;
+
+
+FT = RandomWalkParams; 
+
+
 end
   
 methods
-    
-    %class constructor
-    function obj=FirstTry(dimension,numParticles,dt,diffusionConst,numSteps)
-       obj.dimension=dimension;
-       obj.numParticles=numParticles;
-       obj.dt=dt;
-       obj.numSteps=numSteps;
-       obj.diffusionConst=diffusionConst;
-       obj.paths = zeros(obj.numParticles,3,obj.numSteps);
-    end
-     
+ 
+    function obj = FirstTry(rp)
+      
+          obj.FT =  rp;
+      
+      end
+   
     
     function Calculate(obj)
         %Initial position 
         for j=1
-            noise = [zeros(1,obj.dimension);...
-                     sqrt(2*obj.diffusionConst*obj.dt)*randn(obj.numParticles-1,obj.dimension)];
-            obj.paths(:,1:obj.dimension,j)=cumsum(noise);
+            noise = [zeros(1,obj.FT.dimension);...
+                     sqrt(2*obj.FT.diffusionConst*obj.FT.dt)*randn(obj.FT.numParticles-1,obj.FT.dimension)];
+            obj.FT.paths(:,1:obj.FT.dimension,j)=cumsum(noise);
              
         end
         
-        for j=2:obj.numSteps
-            noise = [sqrt(2*obj.diffusionConst*obj.dt)*randn(obj.numParticles,obj.dimension)];
-            obj.paths(:,1:obj.dimension,j)=obj.paths(:,1:obj.dimension,j-1)+noise;
+        for j=2:obj.FT.numSteps
+            noise = [sqrt(2*obj.FT.diffusionConst*obj.FT.dt)*randn(obj.FT.numParticles,obj.FT.dimension)];
+            obj.FT.paths(:,1:obj.FT.dimension,j)=obj.FT.paths(:,1:obj.FT.dimension,j-1)+noise;
              
         end
         
@@ -49,16 +44,16 @@ methods
        cameratoolbar
        c=rand(1,3);
        
-           x = obj.paths(:,1,1);
-           y = obj.paths(:,2,1);
-           z = obj.paths(:,3,1);
+           x = obj.FT.paths(:,1,1);
+           y = obj.FT.paths(:,2,1);
+           z = obj.FT.paths(:,3,1);
 %        end
        l=line('XData',x,'YData',y,'ZData',z,'Color',c,'linestyle','-.','Marker','o','markersize',10,'Parent',a);
-          for i=2:obj.numSteps
+          for i=2:obj.FT.numSteps
          
-               set(l,'XData',obj.paths(:,1,i),'YData',obj.paths(:,2,i),'ZData',obj.paths(:,3,i));
+               set(l,'XData',obj.FT.paths(:,1,i),'YData',obj.FT.paths(:,2,i),'ZData',obj.FT.paths(:,3,i));
                
-              pause(3)
+           %   pause(3)
               
                drawnow
               
