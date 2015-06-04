@@ -48,76 +48,16 @@ The position of the beads after each step will satisfy the diffusion equation :
 \end{equation}
 $\bm{g(t)}$ is normally distributed random noise.
 \subsection{Random walk Simulation}
+We simulate the random walk with the following parameters :
 \begin{lstlisting}
-%This program is used to simulate the brownian motion
-classdef FirstTry<handle
-
-properties
-dimension%dimension=1,2 or 3
-numParticles%number of particles in polymers;
-dt%pas de temps
-numSteps% number of motion
-diffusionConst %constante diffusion
-paths %the paths of polymer;
-end
-
-methods
-
-%class constructor
-function obj=FirstTry(dimension,numParticles,dt,diffusionConst,numSteps)
-obj.dimension=dimension;
-obj.numParticles=numParticles;
-obj.dt=dt;
-obj.numSteps=numSteps;
-obj.diffusionConst=diffusionConst;
-obj.paths = zeros(obj.numParticles,3,obj.numSteps);
-end
-
-
-function Calculate(obj)
-
-for j=1
-noise = [zeros(1,obj.dimension);...
-sqrt(2*obj.diffusionConst*obj.dt)*randn(obj.numParticles-1,obj.dimension)];
-obj.paths(:,1:obj.dimension,j)=cumsum(noise);
-
-end
-
-for j=2:obj.numSteps
-noise = [sqrt(2*obj.diffusionConst*obj.dt)*randn(obj.numParticles,obj.dimension)];
-obj.paths(:,1:obj.dimension,j)=obj.paths(:,1:obj.dimension,j-1)+noise;
-
-end
-
-
-end %'random walk 'simulation
-
-function Plot(obj)
-f=figure;
-b =[-20 20];
-a= axes('Parent',f,'NextPlot','replaceChildren','XLim',b,'YLim',b,'ZLim',b); 
-c=rand(1,3);
-
-x = obj.paths(:,1,1);
-y = obj.paths(:,2,1);
-z = obj.paths(:,3,1);
-%        end
-l=line('XData',x,'YData',y,'ZData',z,'Color',c,'linestyle','-.','Marker','o','markersize',10,'Parent',a);
-for i=2:obj.numSteps
-
-set(l,'XData',obj.paths(:,1,i),'YData',obj.paths(:,2,i),'ZData',obj.paths(:,3,i));
-
-pause(1)
-
-drawnow
-
-end
-end
-
-end
-end
-
+dimension      = 3;;%dimension=1,2 or 3
+numParticles   = 100;%number of particles in polymers;
+dt             =0.1;%pas de temps
+numSteps       =100;% number of motion
+diffusionConst =0.1; %constante diffusion
+paths          =[];  ; %the paths of polymer;
 \end{lstlisting}
+The following graph is the trajectory of beads in the first step and last step;
 \begin{figure}[H]
 	\begin{minipage}[t]{0.5\textwidth}
 		\centering
@@ -133,96 +73,21 @@ end
 		
 	\end{minipage}
 \end{figure}
-\subsection{Probability distribution function of $\bm{R}$  }
-In order to verify that the PDF of $\bm{R}$ is Gaussian,we calculate the 'end to end distance' $\bm{R}$ for each simulation,then we plot it with histogram by coordinate $(x,y,z)$ respectively and compare with the probability distribution function of $\bm{R}$ in theory. 
+\subsection{Probability density function of $\bm{R}$  }
+In order to verify that the PDF of $\bm{R}$ is Gaussian,we calculate the 'end to end distance' $\bm{R}$ for each simulation,then we plot it with histogram by coordinate $(x,y,z)$ respectively and compare with the probability density function of $\bm{R}$ in theory. \\
+We simulate the probability density of Gaussian  with the following parameters :
 \begin{lstlisting}
-%this program is used to simulate the probability distribution of Gaussian 
-classdef Idealchain<handle
 
-properties
-dimension%dimension=3
-numParticles%number of particles in polymers;
-dt%pas de temps
-numSteps% number of motion
-diffusionConst %constante diffusion
-paths %the paths of polymer;
-endToEndDist %end to end distance 
-simulation %number of simulations
-end
-
-methods
-
-%class constructor
-function obj=Idealchain(dimension,numParticles,dt,diffusionConst,numSteps,simulation)
-obj.dimension=dimension;
-obj.numParticles=numParticles;
-obj.dt=dt;
-obj.numSteps=numSteps;
-obj.diffusionConst=diffusionConst;
-obj.simulation=simulation;
-obj.paths = zeros(2,3,2);
-obj.endToEndDist=zeros(obj.simulation,3);
-end
-
-
-function Calculate(obj)
-for s=1:obj.simulation 
-%step 1:connect the chain;
-obj.paths(1,1:obj.dimension,1)=[0 0 0];%position of first beed;
-obj.paths(2,1:obj.dimension,1)=obj.paths(1,1:obj.dimension,1);
-noise=sqrt(2*obj.diffusionConst*obj.dt)*randn(1,obj.dimension);
-for i=1:obj.numParticles
-obj.paths(2,1:obj.dimension,1)=obj.paths(2,1:obj.dimension,1)+noise;%position of last beed;
-end
-
-%step 2:end :the position of beed 1 and beed end varity by time;
-for j=2:obj.numSteps
-obj.paths(1,1:obj.dimension,2)=obj.paths(1,1:obj.dimension,1)+noise;
-obj.paths(2,1:obj.dimension,2)=obj.paths(2,1:obj.dimension,1)+noise;   
-obj.paths(1,1:obj.dimension,1)=obj.paths(1,1:obj.dimension,2);
-obj.paths(2,1:obj.dimension,1)=obj.paths(2,1:obj.dimension,2);  
-end
-obj.endToEndDist(s,:)=obj.paths(2,:,2)-obj.paths(1,:,2);
-
-
-end
-
-end
-
-function Plot(obj)
-% 
-%           figure(2);
-%          plot(obj.endToEndDist);
-
-%          figure(3)
-%        [h,bins]= hist(obj.endToEndDist(:,1),50);
-%          bar(bins,h);
-%        
-
-f=@(N,R,b)(sqrt(1/(2*pi*N*b^2))*exp(-(sum(R.^2,2))./(2*N*b^2)));%PDF 
-subplot(2,2,1)
-[h, bins]=hist(obj.endToEndDist(:,1),50); h= h./sum(h); bar(bins,h),...
-hold on, 
-plot(bins,f(obj.numParticles,[bins'],1),'r')
-title('PDF on x')
-
-subplot(2,2,2)
-[h, bins]=hist(obj.endToEndDist(:,2),50); h= h./sum(h);bar(bins,h),...
-hold on, plot(bins,f(obj.numParticles,[bins'],1),'r')
-title('PDF on y')
-
-subplot(2,2,3)
-[h, bins]=hist(obj.endToEndDist(:,3),50); h= h./sum(h); bar(bins,h),...
-hold on, plot(bins,f(obj.numParticles,[bins'],1),'r')
-title('PDF on z')
-%plot(3/(2*pi*obj.numParticles*1)^1.5*exp(3*obj.R.^2/(2*obj.numParticles*1)))
-
-end
-
-end
-end 
+     dimension: 3
+     numParticles: 100
+     dt: 0.1000
+     numSteps: 100
+     diffusionConst: 0.1000
+     paths: [2x3x2 double]
+     simulation: 1000
 
 \end{lstlisting}
+The following graphs verify that for each coordinate,the distribution of $\bm{R}$ is Gaussian;
 \begin{figure}[H]
 	\includegraphics[width=6.2in]{PDF.eps} 
 	 
@@ -242,101 +107,67 @@ end
 	 \]
 	 where $\xi$ is friction coefficient,$k$ is spring constant.
 	 \subsection{Rouse Model Simulation}
+	 We simulate the Rouse Model with the following parameters:
 	 \begin{lstlisting}
-	 %This program is used to simulate the spring-bead model
-	 classdef RouseModel<handle
-	 properties
-	 dimension%dimension=1,2 or 3
-	 numParticles%number of particles in polymers;
-	 dt%pas de temps
-	 numSteps% number of motion
-	 numSimulations%number of simulations;
-	 diffusionConst %constante diffusion
-	 paths %the paths of polymer;
-	 frictionCoefficient;%the frictionCoefficient of a bead;
-	 MetBeedNum; %the number of the beed which have met with the first and last beed;
-	 connectedBeads %an n by two array with pair wise bead numbers to connect
-	 fixedBeads %numBeads of beads that do not move
-	 b %length between 2 beads 
-	 end
-	 
-	 methods
-	 
-	 
-	 function obj=RouseModel(dimension,numParticles,dt,diffusionConst,...
-	 numSteps,frictionCoefficient,connectedBeads, fixedBeads,b)
-	 
-	 obj.dimension = dimension;
-	 obj.numParticles = numParticles;
-	 obj.dt = dt;
-	 obj.numSteps = numSteps;
-	 obj.diffusionConst = diffusionConst;
-	 obj.paths = zeros(obj.numParticles,3,obj.numSteps);
-	 obj.frictionCoefficient = frictionCoefficient;
-	 obj.fixedBeads= fixedBeads;
-	 obj.connectedBeads = connectedBeads ;
-	 obj.b=b;
-	 end
-	 
-	 
-	 function Simulation(obj)
-	 
-	 % set initial position
-	 for j=1
-	 noise = [zeros(1,obj.dimension);...
-	 sqrt(2*obj.diffusionConst*obj.dt)*randn(obj.numParticles-1,obj.dimension)];
-	 obj.paths(:,1:obj.dimension,j)=cumsum(noise);
-	 
-	 end
-	 
-	 a = obj.dimension*obj.diffusionConst/obj.b^2;
-	 R = RouseMatrix(obj.numParticles, obj.connectedBeads, obj.fixedBeads);
-	 
-	 for j=2:obj.numSteps
-	 
-	 noiseSingle = sqrt(2*obj.diffusionConst*obj.dt)*randn(obj.numParticles,obj.dimension);
-	 %                 obj.paths(:,:,j)=obj.paths(1,:,j-1)+obj.dt*(a*(obj.paths(2,:,j-1)-obj.paths(1,:,j-1)))+noiseSingle;
-	 
-	 % zero out noise for fixed particles
-	 noiseSingle(obj.fixedBeads,:) = 0;
-	 
-	 obj.paths(:,1:3,j) = -a*R*obj.paths(:,1:3,j-1)*obj.dt+noiseSingle +obj.paths(:,1:3,j-1);
-	 
-	 end
-	 
-	 end
-	 
-	 
-	 function Plot(obj)
-	 f=figure;
-	 b=[-10 10];
-	 d= axes('Parent',f,'NextPlot','replaceChildren','XLim',b,'YLim',b,'ZLim',b);
-	 daspect([1 1 1]);
-	 cameratoolbar
-	 c=rand(1,3);
-	 
-	 x = obj.paths(:,1,1);
-	 y = obj.paths(:,2,1);
-	 z = obj.paths(:,3,1);
-	 
-	 l=line('XData',x,'YData',y,'ZData',z,'Color',c,'linestyle','-.','Marker','o','markersize',10,'Parent',d);
-	 for i=2:obj.numSteps
-	 
-	 set(l,'XData',obj.paths(:,1,i),'YData',obj.paths(:,2,i),'ZData',obj.paths(:,3,i));
-	 
-	 pause(0.2)
-	 
-	 drawnow
-	 end
-	 
-	 
-	 end
-	 
-	 end
-	 end
+	  dimension: 3
+	  numParticles: 100
+	  dt: 0.1000
+	  numSteps: 100
+	  diffusionConst: 0.1000
+	  paths: [100x3x100 double]
+	  simulation: 1
+	  pathsNormal: [100x3x100 double]
+	  frictionCoefficient: 1
+	  connectedBeads: []
+	  fixedBeads: []
+	  b: 1
 	 \end{lstlisting}
-	 \begin{figure}
-	 	\includegraphics[width=3.2in]{MetTime.eps} 
-	 	\includegraphics[width=3.2in]{MetTime4.eps}
-	 	\end{figure}
+	 The following graph is the trajectory of beads in the first step and last step;
+	 \begin{figure}[H]
+	 	\begin{minipage}[t]{0.5\textwidth}
+	 		\centering
+	 		\includegraphics[width=3.2in]{rouseM.eps}
+	 		\caption{initial position}
+	 	\end{minipage}%
+	 	\begin{minipage}[t]{0.5\textwidth}
+	 		\centering
+	 		\includegraphics[width=3.2in]{rouseMF.eps}
+	 		\caption{final position}
+	 		
+	 	\end{minipage}
+	 \end{figure}
+\subsection{Simulation of the mean first-encounter time in the Rouse Model}
+\paragraph{}
+We want to simulate the mean first-encounter time that 3 beads have met each other in a chain during each simulation, in order to verify that the probability distribution function is exponential.We set 32 beads and we do the simulations with the first bead,last bead ,the third bead we set it from 2 to 16,that means we have $[1,2,32],[1,3,32]...[1,16,32]$ cases.For each case,we calculate the mean first-encounter time and we plot with histogram.
+
+The following parameters are used to simulate the mean first-encounter time:
+\pagebreak
+\begin{lstlisting}
+dimension           = 3;
+numParticles        = 32;
+dt                  = 0.01;
+diffusionConst      = 1;
+numSteps            = 100;
+numSimulations      = 1000;
+frictionCoefficient = 1;
+connectedBeads      = [];
+fixedBeads          = [];
+metBeadNum          = [ones(1,14);[2:15];32*ones(1,14)]';
+b                   = 1;
+encounterDistance   = b./5;
+\end{lstlisting}
+
+\section{Brownian bridge simulation}
+The Brownian bridge is a Brownian motion which is starting at $x$ at time $t_0$ and passing through point $y$ at $T$, $T \geq t$,it is defined as :\\
+\begin{equation}
+B(t) = w(t-t_0)-\frac{t-t_0}{T-t_0}[w(T-t_0)-y+x]+x
+\end{equation}
+which $w(T)$ is a random walk process.\\
+The following steps are used to build a Brownian bridge in domain :\\
+1.Initialization of beads on the domain's boundary;\\
+2.list all constrain beads in ascending order $c={a_1,a_2,...a_{N_c}}$\\
+3.choose a random position for $B_{a_1}$;\\
+4.For$i =2...N_c$,choose a position for $B_{a_i}$ by diffusion on the boundary $a_i -a_{i-1}$ steps;\\
+5.for all of points in $c$,if $a_{i}-a_{i-1}>1$,construct a Brownian bridge between each 2 points by using the formula above;\\
+6.if $a_1 \leq 1$ or $a_{N_c} \geq BeadsEnd,$sequentially build a path form the 1 to $a_1$ and $a_{N_c}$ to $BeadsEnd$.\\
 \end{document}
