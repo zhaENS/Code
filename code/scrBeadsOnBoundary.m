@@ -16,7 +16,7 @@ numBeads          = 100;
 
 %points = DiffuseOnSphere(initialPoint,numSteps,radius, dt, diffusionConst);
 domainClass = DomainHandler(dp);
-beads       = [5 50 90];% beads on the boundary
+beads       = [1 50 90 100];% beads on the boundary
 %points      = DiffuseOnSphere(initialPoint,numSteps,dp.domainWidth, dp.dt, dp.diffusionConst)
 %points      = BeadsOnBoundary(dp.domainWidth, dp.dt, dp.diffusionConst,beads);
 
