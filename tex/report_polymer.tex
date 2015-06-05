@@ -146,17 +146,22 @@ The following parameters are used to simulate the mean first-encounter time:
 dimension           = 3;
 numParticles        = 32;
 dt                  = 0.01;
-diffusionConst      = 1;
-numSteps            = 100;
+diffusionConst      = 10;
+numSteps            = Inf;
 numSimulations      = 1000;
 frictionCoefficient = 1;
 connectedBeads      = [];
 fixedBeads          = [];
-metBeadNum          = [ones(1,14);[2:15];32*ones(1,14)]';
+metBeadNum          = [1 16 32] [1 32];
 b                   = 1;
-encounterDistance   = b./5;
+encounterDistance   = 3*b./5;
+encounterTime       a list contains the time they have met for every simulation;      
 \end{lstlisting}
-
+\begin{figure}[H]
+	\includegraphics[width=6.2in]{MetTimeN.eps}
+	\caption{The first encounter time of [1 16 32] and [1 32]}
+\end{figure}
+The mean first-encounter time is 
 \section{Brownian bridge simulation}
 The Brownian bridge is a Brownian motion which is starting at $x$ at time $t_0$ and passing through point $y$ at $T$, $T \geq t$,it is defined as :\\
 \begin{equation}
@@ -164,10 +169,46 @@ B(t) = w(t-t_0)-\frac{t-t_0}{T-t_0}[w(T-t_0)-y+x]+x
 \end{equation}
 which $w(T)$ is a random walk process.\\
 The following steps are used to build a Brownian bridge in domain :\\
+
 1.Initialization of beads on the domain's boundary;\\
+
 2.list all constrain beads in ascending order $c={a_1,a_2,...a_{N_c}}$\\
+
 3.choose a random position for $B_{a_1}$;\\
+
 4.For$i =2...N_c$,choose a position for $B_{a_i}$ by diffusion on the boundary $a_i -a_{i-1}$ steps;\\
+
 5.for all of points in $c$,if $a_{i}-a_{i-1}>1$,construct a Brownian bridge between each 2 points by using the formula above;\\
+
 6.if $a_1 \leq 1$ or $a_{N_c} \geq BeadsEnd,$sequentially build a path form the 1 to $a_1$ and $a_{N_c}$ to $BeadsEnd$.\\
+
+The following parameters and functions are used to simulate :\\
+
+Parameters :
+\begin{lstlisting}
+dp                = DomainHandlerParams;
+dp.dimension      = 3;
+dp.domainShape    = 'sphere';
+dp.domainWidth    = 2;
+dp.domainCenter   = [0 0 0];
+dp.showDomain     = true;
+dp.dt             = 0.01;
+dp.diffusionConst = 1;
+numBeads          = 100;
+domainClass       = DomainHandler(dp);
+beads             = [15 50 90];% beads on the boundary
+\end{lstlisting}
+
+Functions :
+\begin{lstlisting}
+chainPath     = BrownianBridgeSim(domainClass,dp,beads,numBeads)
+points        = BeadsOnBoundary(dp.domainWidth, dp.dt, dp.diffusionConst,beads);
+pathOnSurface = DiffuseOnSphere(points(1,:),numSteps,radius, dt, diffusionConst);
+\end{lstlisting}
+
+The following graph described for beads [15 50 90] on the boundary,the chain path of 100 beads in one simulation:\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=7.2in]{bOnB.eps}	
+\end{figure}
 \end{document}
