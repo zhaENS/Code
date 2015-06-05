@@ -48,14 +48,14 @@ points      = [x,y,z];
 % sx          = sx*radius;
 % sy          = sy*radius;
 % sz          = sz*radius;
-
+% 
 % figure, subplot(141),plot(phi),set(gca,'YLim',[-2*pi 2*pi]), title('phi'), 
 %         subplot(142), plot(theta),set(gca,'YLim',[-2*pi 2*pi]), title('theta')
 %         x = xcorr(theta,phi);
 %         subplot(143), plot(x./sum(x))
 %         dx = xcorr(dTheta,dPhi);
 %         subplot(144), plot(dx./sum(dx)), title('xcorr dTheta, dPhi')
-
+% 
 % figure, plot(theta,phi), xlabel('theta'), ylabel('phi'), set(gca,'XLIm',2*[-pi pi],'YLim',2*[-pi pi])
 % figure, mesh(sx,sy,sz,'FaceColor','none','EdgeColor','g'), hold on, 
 % plot3(points(:,1), points(:,2),points(:,3))

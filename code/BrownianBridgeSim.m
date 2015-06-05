@@ -140,7 +140,7 @@ end
 chainPath = [pathsTotal;pathsReste1;pathsReste2];
 toc
 
-[sx, sy, sz]= sphere(15);
+[sx, sy, sz]= sphere(20);
 sx = sx*dp.domainWidth;
 sy = sy*dp.domainWidth;
 sz = sz*dp.domainWidth;
@@ -151,7 +151,7 @@ i = 1;
 
 while i <=length(beads)
 plot3(points(i,1), points(i,2),points(i,3),'o','MarkerSize',7,'MarkerFaceColor','r');
-text(points(i,1)+0.001,points(i,2)-0.01,points(i,3)+0.002,num2str(beads(i)),'FontSize',15);
+text(points(i,1)+0.001,points(i,2)-0.01,points(i,3)+0.002,num2str(beads(i)),'FontSize',20);
 hold on
 i = i+1;
 hold on
