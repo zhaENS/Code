@@ -10,7 +10,7 @@ classdef RouseModelMetTime<handle
         diffusionConst %constante diffusion
         paths %the paths of polymer;
         frictionCoefficient;%the frictionCoefficient of a bead;
-    %    metBeadNum; %the number of the beed which have met with the first and last beed;
+      %  metBeadNum; %the number of the beed which have met with the first and last beed;
         metBeadNum1;
         connectedBeads %an n by two array with pair wise bead numbers to connect
         fixedBeads %numBeads of beads that do not move
@@ -38,11 +38,11 @@ classdef RouseModelMetTime<handle
             obj.fixedBeads= fixedBeads;
             obj.connectedBeads = connectedBeads ;
             obj.numSimulations = numSimulations;
-%            obj.metBeadNum  = metBeadNum;
+         %  obj.metBeadNum  = metBeadNum;
             obj.metBeadNum1 = metBeadNum1;
             obj.b = b;
             obj.encounterDistance = encounterDistance;
-       %     obj.encounterTime = zeros(obj.numSimulations,size(obj.metBeadNum,1));
+          %  obj.encounterTime = zeros(obj.numSimulations,size(obj.metBeadNum,1));
             obj.encounterTime1 = zeros(obj.numSimulations,size(obj.metBeadNum1,1));
         
         end
@@ -54,7 +54,7 @@ classdef RouseModelMetTime<handle
             for i = 1:size(obj.metBeadNum1,1)
             for s = 1:obj.numSimulations
                 t1=clock;
-                exitFlag  = false;
+              %  exitFlag  = false;
                 exitFlag1 = false;
                 step     = 1;
                 
@@ -146,27 +146,31 @@ classdef RouseModelMetTime<handle
         function Plot(obj) 
            for i = 1:size(obj.metBeadNum1,1)
                 figure(i+1)
-%                 % subplot(2,1,1)
+%             %   subplot(2,1,1)
 %                  [h,bins]=hist(obj.encounterTime(:,i),50);
 %                  h=h./trapz(bins,h);
 %                   %bar(bins,h)
-%                   plot(bins,h)
-%                   legend('the probability of encounterTime')
-%                title(['the metBeads are ',num2str(obj.metBeadNum(i,:)),',','the mean encounter time is ',...
-%                        num2str(sum(obj.encounterTime(:,i))/obj.numSimulations)]);
-          %     subplot(2,1,2)
+%                   plot(bins,h,'r')
+%                   legend('the probability of encounter [1 16 32]')
+%                title(['beads ',num2str(obj.metBeadNum(i,:))])
+%                       % num2str(sum(obj.encounterTime(:,i))/obj.numSimulations)]);
+%           hold on
                   [h,bins]=hist(obj.encounterTime1(:,i),50);
                  h=h./trapz(bins,h);
-                  %bar(bins,h)
-                   plot(bins,h)
-                  legend('the probability of encounterTime');
-               title(['the metBeads are ',num2str(obj.metBeadNum1(i,:)), ',', 'the mean encouner time is ' ,...
-                       num2str(sum(obj.encounterTime1(:,i))/obj.numSimulations)]);
+                  bar(bins,h)
+                   %plot(bins,h)
+                %  legend('the probability of encounter [1 32]');
+               title(['beads ',num2str(obj.metBeadNum1(i,:))])
+                    %   num2str(sum(obj.encounterTime1(:,i))/obj.numSimulations)]);
          
            end
-            
-        end
+        %figure
+%         meanTime=sum(rouseModel.encounterTime)./rouseModel.numSimulations;
+%         x=[1:1:14];plot(meanTime);set(gca,'XTick',[1:1:14]);legend('mean encounterTime');xlabel('metBeads from[1 2 32] to[1 15 32]');ylabel('mean encounterTime'); 
+%         text(x,meanTime,num2cell(meanTime));
+%         end
        
+    end
     end
 end
  

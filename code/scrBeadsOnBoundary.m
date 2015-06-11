@@ -1,6 +1,6 @@
 
-addpath(genpath(fullfile(pwd,'..','..','PolymerChainDynamics')));
-addpath(genpath(fullfile(pwd,'..','..','Utils')));% import Utils 
+%addpath(genpath(fullfile(pwd,'..','..','PolymerChainDynamics')));
+%addpath(genpath(fullfile(pwd,'..','..','Utils')));% import Utils 
 
 close all 
 dp                = DomainHandlerParams;

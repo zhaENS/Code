@@ -1,6 +1,6 @@
 function HistoneReflectionTest
 % This test function moves histones on a Rouse chain
-addpath(genpath(fullfile(pwd,'..','PolymerChainDynamics','FrameWork')))
+%addpath(genpath(fullfile(pwd,'..','PolymerChainDynamics','FrameWork')))
 close all
 profile on
 %
@@ -55,7 +55,7 @@ if simulatorParams.simulator.showSimulation
         'LineStyle','none');
     daspect([1 1 1])
 end
-numSteps = [100:200:1000];
+numSteps = 1000;
 t        =[];
 for nIdx =1:numel(numSteps)
 r.Run;% run initial simulator step
@@ -113,6 +113,11 @@ t(nIdx)       = 1;
 end
 figure
 [h,x]=hist(t-1,numSteps);
+h=h./trapz(x,h);
 bar(x,h);
+xlabel('the number of collision');
+ylabel('probability');
+legend('the probability of collision for steps');
+
 end
 
