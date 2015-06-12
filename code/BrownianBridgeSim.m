@@ -1,13 +1,13 @@
 %Create a brownian bridge from beadStart to beadEnd
-function chainPath=BrownianBridgeSim(domainClass,dp,beads,numBeads)
+function chainPath = BrownianBridgeSim(initialPoint,domainClass,dp,beads,numBeads)
 tic
 beads     = sort(beads);
 %obtain the coordinates of the points on the sphere.
-points    = BeadsOnBoundary(dp.domainWidth, dp.dt, dp.diffusionConst,beads);
+points    = BeadsOnBoundary(initialPoint,dp.domainWidth, dp.dt, dp.diffusionConst,beads);
 chainPath = points(1,:);
 % initialize the BrownianBridge class 
-noiseSTD = sqrt(2*dp.dt*dp.diffusionConst);
-bb = BrownianBridge('realizations',1,'dimension',3,'constructionType','normal','noiseSTD',noiseSTD);
+%noiseSTD = sqrt(2*dp.dt*dp.diffusionConst);
+%bb = BrownianBridge('realizations',1,'dimension',3,'constructionType','normal','noiseSTD',noiseSTD);
 % for bIdx = 1:(numel(beads)-1)
 %     % build a Brownian bridge between any two points on the boundary
 %     numPoints            = (beads(bIdx+1)-beads(bIdx)+1);
@@ -107,9 +107,9 @@ for i = 1:length(beads)-1
    paths(2:B(i)+1,:) = x+w-(wT-y+x).*(t/(T));
    d                 = domainClass.InDomain(paths(2:B(i)+1,:));
     end
-  plot3(paths(:,1),paths(:,2),paths(:,3),'Color',[rand rand rand],'LineWidth',4);
-  hold on
-  pathsTotal = [pathsTotal;paths];
+%   plot3(paths(:,1),paths(:,2),paths(:,3),'Color',[rand rand rand],'LineWidth',4);
+%   hold on
+  pathsTotal = [pathsTotal;paths(1:B(i),:)];
 end
 pathsReste1 = [];
 pathsReste2 = [];
@@ -125,38 +125,40 @@ if beads(1)~= 1
     plot3(pathsReste1(:,1),pathsReste1(:,2),pathsReste1(:,3),'Color',[rand rand rand],'LineWidth',4);
     hold on
 end
-if beads(end)~= numBeads
+if beads(end)== numBeads
+    pathsTotal = [pathsTotal;points(end,:)];
+else 
         d2 = 0;
          while min(d2) == 0
         pathsReste2 = cumsum([points(end,:);sqrt(2*dp.diffusionConst*dp.dt)...   
     *randn(numBeads-beads(end),3)]);
         d2          =  domainClass.InDomain(pathsReste2);
          end
-        plot3(pathsReste2(:,1),pathsReste2(:,2),pathsReste2(:,3),'Color',[rand rand rand],'LineWidth',4);
-        hold on
+       % plot3(pathsReste2(:,1),pathsReste2(:,2),pathsReste2(:,3),'Color',[rand rand rand],'LineWidth',4);
+        %hold on
 end
 
 
-chainPath = [pathsTotal;pathsReste1;pathsReste2];
+chainPath = [pathsTotal;pathsReste1(2:end,:);pathsReste2];
 toc
 
-[sx, sy, sz]= sphere(20);
-sx = sx*dp.domainWidth;
-sy = sy*dp.domainWidth;
-sz = sz*dp.domainWidth;
-daspect([1 1 1]), cameratoolbar
-mesh(sx,sy,sz,'FaceColor','none','EdgeColor','m'), hold on
+% [sx, sy, sz]= sphere(20);
+% sx = sx*dp.domainWidth;
+% sy = sy*dp.domainWidth;
+% sz = sz*dp.domainWidth;
+% daspect([1 1 1]), cameratoolbar
+% mesh(sx,sy,sz,'FaceColor','none','EdgeColor','m'), hold on
 
 i = 1;
 
-while i <=length(beads)
-plot3(points(i,1), points(i,2),points(i,3),'o','MarkerSize',7,'MarkerFaceColor','r');
-text(points(i,1)+0.001,points(i,2)-0.01,points(i,3)+0.002,num2str(beads(i)),'FontSize',20);
-hold on
-i = i+1;
-hold on
-% pause(1.0)
-end 
+% while i <=length(beads)
+% plot3(points(i,1), points(i,2),points(i,3),'o','MarkerSize',7,'MarkerFaceColor','r');
+% text(points(i,1)+0.001,points(i,2)-0.01,points(i,3)+0.002,num2str(beads(i)),'FontSize',20);
+% hold on
+% i = i+1;
+% hold on
+% % pause(1.0)
+% end 
 
 end
 

@@ -11,12 +11,12 @@ dp.domainCenter   = [0 0 0];
 dp.showDomain     = true;
 dp.dt             = 0.01;
 dp.diffusionConst = 1;
-numBeads          = 100;
+numBeads          = 10;
 
 
 %points = DiffuseOnSphere(initialPoint,numSteps,radius, dt, diffusionConst);
 domainClass = DomainHandler(dp);
-beads       = [15 50 90];% beads on the boundary
+beads       = [1 5 10];% beads on the boundary
 %points      = DiffuseOnSphere(initialPoint,numSteps,dp.domainWidth, dp.dt, dp.diffusionConst)
 %points      = BeadsOnBoundary(dp.domainWidth, dp.dt, dp.diffusionConst,beads);
 
