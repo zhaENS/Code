@@ -1,4 +1,4 @@
-function points = DiffuseOnSphere(initialPoint,numSteps,radius, dt, diffusionConst)
+function points = DiffuseOnSphere(initialPoint,numSteps,radius,domainCenter, dt, diffusionConst)
 % random walk on a sphere assuming the directions are indipendent
 % initialPoint should be a point on the suface 
 % numSteps is the number of steps to advance from initialPoint
@@ -14,7 +14,7 @@ function points = DiffuseOnSphere(initialPoint,numSteps,radius, dt, diffusionCon
 
 
 % translate initial position to spherical cooridinates 
-rho = sqrt(sum(initialPoint.^2));
+rho = sqrt(sum(bsxfun(@minus,initialPoint,domainCenter).^2));
 if (rho-radius)^2 >eps
     error('the initial point is not on the sphere')
 end
