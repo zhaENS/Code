@@ -29,12 +29,14 @@ for i = 1:length(beadsOnBoundary)-1
             %the path of chain from current (beadsOnBoundary+1) to next
             %beadsOnBoundary;
             paths(2:end,:) = x+w-(wT-y+x).*(t/(T));
+        
+            %correct the paths(end,:) which is calculate by formula to the correct position
+            %of beads on the boundary ;
+            paths(end,:)   = points(i+1,:);
             [d,onDomain]   = domainClass.InDomain(paths(2:end-1,:));
         end
         
-        %corrcte the paths(end,:) which is calculate by formula to the right position
-        %of beads on the boundary ;
-        paths(end,:) = points(i+1,:);
+    
       
         %add the paths to the total paths;
         pathsTotal   = [pathsTotal;paths(2:end-1,:)];
@@ -47,8 +49,13 @@ for i = 1:length(beadsOnBoundary)-1
         % end
 end
 %add the beads on the boundary to the pathsTotal;
-pathsTotal   =[pathsTotal;points];
-        
+pathsTotal                    =[pathsTotal;points];
+
+%change the position of beads to the right order;
+pointsTempo                   =zeros(numel(beadsOnBoundary),3);
+pointsTempo                   = pathsTotal(beadsOnBoundary,:);
+pathsTotal(beadsOnBoundary,:) = points;
+pathsTotal(numBeads-numel(beadsOnBoundary)+1:numBeads,:) = pointsTempo;
 pathsReste1 = [];
 pathsReste2 = [];
 %constructor the rest of the chain

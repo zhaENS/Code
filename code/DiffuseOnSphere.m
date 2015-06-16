@@ -14,7 +14,7 @@ function points = DiffuseOnSphere(initialPoint,numSteps,radius,domainCenter, dt,
 
 
 % translate initial position to spherical cooridinates 
-rho = sqrt(sum(bsxfun(@minus,initialPoint,domainCenter).^2));
+rho = sqrt(sum(bsxfun(@minus,initialPoint,domainCenter).^2,2));
 if (rho-radius)^2 >eps
     error('the initial point is not on the sphere')
 end
