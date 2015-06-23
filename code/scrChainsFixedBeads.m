@@ -5,7 +5,7 @@
 
 frameWorksParams = SimulationFrameworkParams('numSteps',Inf,'showSimulation',true,'dt',0.1,'numChains',3,'objectInteraction',false);
 
-%definit a domain
+%define a domain
 
 diffConst = 0.01;
 sphereForce = ForceManagerParams('diffusionForce',true,'diffusionConst',diffConst,...
@@ -15,7 +15,7 @@ dp          = DomainHandlerParams('domainShape','sphere','forceParams',sphereFor
                                   25,'dt',frameWorksParams.simulator.dt,'diffusionConst',diffConst);
                               
 dh          =DomainHandler(dp);                             
-%definit a chain;
+%define a chain;
 
 chainForce  = ForceManagerParams('springForce',true,'diffusionForce',true,'diffusionConst',diffConst,...
                                  'bendingElasticityForce',false,'bendingConst',0.1,...
@@ -38,9 +38,9 @@ cp(2)= ChainParams('numBeads',20,'b',1,'initializeInDomain',1,'springForce',true
 
 cp(3)= ChainParams('numBeads',15,'b',1,'initializeInDomain',1,'springForce',true,...
                    'forceParams',chainForce,'dt',frameWorksParams.simulator.dt,'fixedBeadsPosition',initialPt,...
-                   'fixedBeadNum',...
-                   [8],'beadsOnBoundary',[1 8 15]);
+                   'fixedBeadNum',[8],'beadsOnBoundary',[1 8 15]);
 
+                   
 
 
 %registre parameters;

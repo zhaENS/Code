@@ -11,17 +11,14 @@ dp.domainCenter   = [0 0 0];
 dp.showDomain     = true;
 dp.dt             = 0.01;
 dp.diffusionConst = 1;
-numBeads          = 10;
+numBeads          = 100;
 
+domainClass           = DomainHandler(dp);
+beadsOnBoundary       = [5 50 100];% beads on the boundary
 
-%points = DiffuseOnSphere(initialPoint,numSteps,radius, dt, diffusionConst);
-domainClass = DomainHandler(dp);
-beads       = [1 5 10];% beads on the boundary
-%points      = DiffuseOnSphere(initialPoint,numSteps,dp.domainWidth, dp.dt, dp.diffusionConst)
-%points      = BeadsOnBoundary(dp.domainWidth, dp.dt, dp.diffusionConst,beads);
-
-chainPath= BrownianBridgeSim(domainClass,dp,beads,numBeads);
-
+initialPoint = domainClass.GetRandomBoundarySample(1);
+%chainPath= BrownianBridgeSim(domainClass,dp,beads,numBeads);
+chainPath = BrownianBridgeSim(initialPoint,domainClass,dp,beadsOnBoundary,numBeads)
 
 
  

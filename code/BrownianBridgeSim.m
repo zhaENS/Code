@@ -5,7 +5,7 @@ beadsOnBoundary     = sort(beadsOnBoundary);
 % obtain the coordinates of the points on the sphere.
 domainCenter = domainClass.params.domainCenter;
 points       = BeadsOnBoundary(initialPoint,dp.domainWidth,domainCenter,dp.dt, dp.diffusionConst,beadsOnBoundary);
-%chainPath    = points(1,:);
+
 
 pathsTotal = [];
 for i = 1:length(beadsOnBoundary)-1

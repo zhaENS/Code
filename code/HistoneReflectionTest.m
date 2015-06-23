@@ -11,13 +11,21 @@ simulatorParams = SimulationFrameworkParams('showSimulation',true,'numSteps',1,'
 
 % create a spherical domain
 % assign a force to the domain
-sphereForces = ForceManagerParams('lennardJonesForce',false,'diffusionForce',true,'diffusionConst',0.001,...
-                                  'LJPotentialWidth',0.01,'LJPotentialDepth',0.01,'dt',simulatorParams.simulator.dt);
-dp(1)       = DomainHandlerParams('domainShape','sphere','forceParams',sphereForces,...
-    'domainWidth',3,'dimension',simulatorParams.simulator.dimension);
-chainForces = ForceManagerParams('dt',simulatorParams.simulator.dt,'springForce',false,...
-    'bendingElasticityForce',false,'bendingConst',1,'springConst',0.05);
-cp          = ChainParams('numBeads',4,'initializeInDomain',1,'forceParams',chainForces,'b',1);
+sphereForces = ForceManagerParams('lennardJonesForce',false,'diffusionForce',true,'diffusionConst',0.00001,...
+                                  'LJPotentialWidth',0.01,'LJPotentialDepth',0.01,'dt',simulatorParams.simulator.dt,...
+                                  'springForce',false);
+
+ dp(1)       = DomainHandlerParams('domainShape','sphere','forceParams',sphereForces,...
+    'domainWidth',1,'dimension',simulatorParams.simulator.dimension);
+% chainForces = ForceManagerParams('dt',simulatorParams.simulator.dt,'springForce',false,...
+%     'bendingElasticityForce',false,'bendingConst',1,'springConst',0.05,'diffusionConst',0.001);
+
+chainForces  = ForceManagerParams('springForce',false,'diffusionForce',true,'diffusionConst',0.00001,...
+                                 'bendingElasticityForce',false,'bendingConst',0.1,...
+                                 'springConst',0.05,...
+                                 'minParticleEqDistance',0);
+
+cp          = ChainParams('numBeads',15,'initializeInDomain',1,'forceParams',chainForces,'b',0.0001);
 % cp(2)     = ChainParams('numBeads',100,'initializeInDomain',1,'forceParams',chainForces);
 
 % register the object parameters in the simulator framework
@@ -32,10 +40,10 @@ r = RouseSimulatorFramework(simulatorParams);
 initialChainPosition     = initialChainPosition{1};
 
 % Initialize histones with the chain position
-histoneForce = ForceManagerParams('dt',simulatorParams.simulator.dt,'diffusionConst',0.001,...
-           'lennardJonesForce',false,'diffusionForce',true,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01);
+histoneForce = ForceManagerParams('dt',simulatorParams.simulator.dt,'diffusionForce',true,'diffusionConst',0.00001,...
+           'lennardJonesForce',false,'springForce',false,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01);
            
-histoneParams = HistoneParams('numHistones',8,'forceParams',histoneForce);
+histoneParams = HistoneParams('numHistones',10,'forceParams',histoneForce);
 h             = HistoneBis(histoneParams);
 
 h.Initialize(initialChainPosition);
