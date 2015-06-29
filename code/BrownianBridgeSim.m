@@ -8,8 +8,9 @@ points       = BeadsOnBoundary(initialPoint,dp.domainWidth,domainCenter,dp.dt, d
 
 
 pathsTotal = [];
+if numel(beadsOnBoundary)>1
 for i = 1:length(beadsOnBoundary)-1
-    %if ~ismember(i,beadsOnBoundary)
+    
         
         % build a Brownian bridge between any two points on the boundary
         B(i)       = beadsOnBoundary(i+1)-beadsOnBoundary(i);
@@ -51,11 +52,9 @@ end
 %add the beads on the boundary to the pathsTotal;
 pathsTotal                    =[pathsTotal;points];
 
-%change the position of beads to the right order;
-pointsTempo                   =zeros(numel(beadsOnBoundary),3);
-pointsTempo                   = pathsTotal(beadsOnBoundary,:);
-pathsTotal(beadsOnBoundary,:) = points;
-pathsTotal(numBeads-numel(beadsOnBoundary)+1:numBeads,:) = pointsTempo;
+else
+pathsTotal = [pathsTotal;points];    
+end
 pathsReste1 = [];
 pathsReste2 = [];
 %constructor the rest of the chain
@@ -80,9 +79,16 @@ if beadsOnBoundary(end)~= numBeads
        % plot3(pathsReste2(:,1),pathsReste2(:,2),pathsReste2(:,3),'Color',[rand rand rand],'LineWidth',4);
         %hold on
 end
+chainPath = [pathsReste1(2:end,:);pathsReste2(2:end,:);pathsTotal;];
+cP1       =repmat(chainPath,[1 1]);
+chainPath(beadsOnBoundary,:) = cP1(end-numel(beadsOnBoundary)+1:end,:);
+Vecbeads           =[1:numBeads];
+beadsNonOnBoundary = setxor(Vecbeads,beadsOnBoundary);
+beadsRemain        =setxor(Vecbeads,numBeads-numel(beadsOnBoundary)+1:numBeads);
+%change the position of beads to the right order;
+chainPath(beadsNonOnBoundary,:) = cP1(beadsRemain,:);
 
 
-chainPath = [pathsTotal;pathsReste1(2:end,:);pathsReste2(2:end,:)];
 % toc
 
 % [sx, sy, sz]= sphere(20);

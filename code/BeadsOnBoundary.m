@@ -17,9 +17,3 @@ pathOnSurface = DiffusionOnSphere(initialPoint,dt,diffusionConst,numSteps,domain
 pointIndices  = beadIndices -beadIndices(1)+1; 
 points        = pathOnSurface(pointIndices,:);
 
-% %====
-% for bIdx = 1:length(beadIndices)-1
-%     numSteps         = beadIndices(bIdx+1)-beadIndices(bIdx);
-%     pointsTotal      = DiffuseOnSphere(points(bIdx,:),numSteps,radius, dt, diffusionConst);
-%     points(bIdx+1,:) = pointsTotal(end,:);% take the last point 
-% end
