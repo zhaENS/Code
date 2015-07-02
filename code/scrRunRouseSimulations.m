@@ -13,9 +13,9 @@ frictionCoefficient = 1;
 connectedBeads      = [];
 fixedBeads          = [];
 %metBeadNum1          = [1 16 32];
- metBeadNum1          = [ones(1,15);[17:31];32*ones(1,15)]';
-b                   = 1;
-encounterDistance   = 3*b./5;
+metBeadNum1          = [ones(1,30);[2:31];64*ones(1,30)]';
+b                     = 1;
+encounterDistance     = 3*b./5;
 %initialize the class
 
 rouseModel = RouseModelMetTime(dimension,numParticles,dt,diffusionConst,...
