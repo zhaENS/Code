@@ -10,7 +10,7 @@ frameWorksParams = SimulationFrameworkParams('numSteps',Inf,'showSimulation',tru
 
 %define a domain
 
-diffConst = 0.1;
+diffConst = 0.5;
 sphereForce = ForceManagerParams('diffusionForce',true,'diffusionConst',diffConst,...
                                  'lennardJonesForce',true,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01,'dt',...
                                   frameWorksParams.simulator.dt);
