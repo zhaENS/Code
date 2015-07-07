@@ -10,8 +10,7 @@ frameWorksParams = SimulationFrameworkParams('numSteps',Inf,'showSimulation',tru
                      'encounterDist',0.6,'stickyTime',zeros(1,40)); 
 
 %define a domain
-
-
+diffConst = 1;
 sphereForce = ForceManagerParams('diffusionForce',true,'diffusionConst',diffConst,...
                                  'lennardJonesForce',true,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01,'dt',...
                                   frameWorksParams.simulator.dt);
@@ -27,7 +26,7 @@ chainForce  = ForceManagerParams('springForce',true,'diffusionForce',true,'diffu
                                  'minParticleEqDistance',0);
  initialPt = dh.GetRandomBoundarySample(1);
  
- diffConst =0.4;
+
  
  cp(1)= ChainParams('numBeads',64,'b',1,'initializeInDomain',1,'springForce',true,...
                    'fixedBeadNum',32,'fixedBeadsPosition',initialPt,'diffusionConst',0.1,...

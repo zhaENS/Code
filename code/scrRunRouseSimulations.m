@@ -8,12 +8,12 @@ numParticles        = 64;
 dt                  = 0.01;
 diffusionConst      = 10;
 numSteps            = Inf;
-numSimulations      = 1000;
+numSimulations      = 10000;
 frictionCoefficient = 1;
 connectedBeads      = [];
 fixedBeads          = [];
 %metBeadNum1          = [1 16 32];
-metBeadNum1          = [ones(1,30);[2:31];64*ones(1,30)]';
+metBeadNum1          = [ones(1,30);[2:31];32*ones(1,30)]';
 b                     = 1;
 encounterDistance     = 3*b./5;
 %initialize the class
