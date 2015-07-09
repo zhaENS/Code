@@ -8,7 +8,7 @@
 function paths = DiffusionOnSphere(initialPoint,dt,diffConst,numSteps,domainCenter,radius)
 %check initialPoint is on the sphere or not
 rho = sqrt(sum(initialPoint.^2,2));
-if (rho-radius)^2>eps
+if (rho-radius).^2>eps
     error('the initial point is not on the sphere');
 end
 %generate a path 2D with numStep;
@@ -31,8 +31,7 @@ phi = -phi;
 Rx = [1 0 0;0 cos(phi) sin(phi);0 -sin(phi) cos(phi)];
 Ry = [cos(phi) 0 -sin(phi) ;0 1 0 ;sin(phi) 0 cos(phi)];
 Rz = [cos(theta) sin(theta) 0;-sin(theta) cos(theta) 0;0 0 1];
-   
-%rotation the paths on the sphere;
+
 % plot3(initialPoint(:,1),initialPoint(:,2),initialPoint(:,3),'o','MarkerSize',4);
 % hold on;
 
