@@ -169,7 +169,7 @@ classdef RouseModelMetTime<handle
 %         x=[1:1:14];plot(meanTime);set(gca,'XTick',[1:1:14]);legend('mean encounterTime');xlabel('metBeads from[1 2 32] to[1 15 32]');ylabel('mean encounterTime'); 
 %         text(x,meanTime,num2cell(meanTime));
 %         end
-       
+%        
     end
     end
 end
