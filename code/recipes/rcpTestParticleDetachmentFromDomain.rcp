@@ -1,0 +1,35 @@
+<description> test recipe for detachment of beads from the boundary of a sphere</description>
+<func> SetRecipeParams </func>
+%Insert parameters as obj.params.[paramsName]=[paramsValue]
+<func> PreSimulationBatchActions </func>
+%Actions performed before each simulation batch
+<func> PreRunActions </func>
+%Actions performed before each simulation run.
+%Note that SimpleRouse class is initialized before each simulation
+<func> PreStepActions </func>
+%Actions performed before each step of the Rouse chain.
+<func> PostStepActions </func>
+%Actions performed before each step of the Rouse chain.
+for oIdx = 1:obj.objectManager.numObjects
+                if obj.simulationData.step==100
+                    detachedPartNumber = obj.objectManager.handles.chain(oIdx).params.beadsOnBoundary(end);
+                    obj.objectManager.handles.chain(oIdx).params.beadsOnBoundary =obj.objectManager.handles.chain(oIdx).params.beadsOnBoundary(1:end-1);
+                    [prevPos curPos] = obj.objectManager.GetPosition(oIdx);
+                    prevPos   = prevPos{1};
+                    curPos    = curPos{1};
+                    particlePosition = curPos(detachedPartNumber,:);
+                    domainCenter = obj.handles.classes.domain.params.domainCenter;
+                    vec             = particlePosition-domainCenter;
+                    prevParticlePosition          = domainCenter+(1-1e-5)*vec;
+                    curPartPosition               = domainCenter+(1-1e-5)*vec;
+                    curPos(detachedPartNumber,:)  = curPartPosition;
+                    prevPos(detachedPartNumber,:) = prevParticlePosition;
+                    obj.objectManager.DealPreviousPosition(oIdx,prevPos);
+                    obj.objectManager.DealCurrentPosition(oIdx,curPos);
+                    sprintf('%s','Disconnect')
+                end
+end
+<func> PostRunActions </func>
+%Actions performed sfter each simulation run.
+<func> PostSimulationBatchActions </func>
+%Actions performed before each simulation batch.
