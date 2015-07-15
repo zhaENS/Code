@@ -7,8 +7,8 @@
 %radius : the radius of the sphere
 function paths = DiffusionOnSphere(initialPoint,dt,diffConst,numSteps,domainCenter,radius)
 %check initialPoint is on the sphere or not
-rho = sqrt(sum(initialPoint.^2,2));
-if (rho-radius).^2>eps
+rho = sqrt(sum((initialPoint-domainCenter).^2,2));
+if (rho-radius)^2>eps
     error('the initial point is not on the sphere');
 end
 %generate a path 2D with numStep;
