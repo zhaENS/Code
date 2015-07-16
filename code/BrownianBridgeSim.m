@@ -1,9 +1,10 @@
 %Create a brownian bridge from beadStart to beadEnd
-function chainPath = BrownianBridgeSim(initialPoint,domainClass,dp,beadsOnBoundary,numBeads)
+function chainPath = BrownianBridgeSim(initialPoint,domainClass,domainNum,beadsOnBoundary,numBeads)
 % tic
 beadsOnBoundary     = sort(beadsOnBoundary);
 % obtain the coordinates of the points on the sphere.
-domainCenter = domainClass.params.domainCenter;
+dp           = domainClass.params(domainNum);
+domainCenter = dp.domainCenter;
 points       = BeadsOnBoundary(initialPoint,dp.domainWidth,domainCenter,dp.dt, dp.diffusionConst,beadsOnBoundary);
 
 
@@ -34,7 +35,7 @@ for i = 1:length(beadsOnBoundary)-1
             %correct the paths(end,:) which is calculate by formula to the correct position
             %of beads on the boundary ;
             paths(end,:)   = points(i+1,:);
-            [d,onDomain]   = domainClass.InDomain(paths(2:end-1,:));
+            [d,onDomain]   = domainClass.InDomain(paths(2:end-1,:),domainNum);
         end
         
     
@@ -64,7 +65,7 @@ if beadsOnBoundary(1)~= 1
        
         pathsReste1  = cumsum([points(1,:);sqrt(2*dp.diffusionConst*dp.dt)...
             *randn(beadsOnBoundary(1)-1,3)]);
-       [d1,onDomain] =  domainClass.InDomain(pathsReste1(2:end,:));
+       [d1,onDomain] =  domainClass.InDomain(pathsReste1(2:end,:),domainNum);
       end
 %     plot3(pathsReste1(:,1),pathsReste1(:,2),pathsReste1(:,3),'Color',[rand rand rand],'LineWidth',4);
 %     hold on
@@ -74,7 +75,7 @@ if beadsOnBoundary(end)~= numBeads
          while min(d2) == 0
         pathsReste2 = cumsum([points(end,:);sqrt(2*dp.diffusionConst*dp.dt)...   
     *randn(numBeads-beadsOnBoundary(end),3)]);
-        [d2,onDomain]         =  domainClass.InDomain(pathsReste2(2:end,:));
+        [d2,onDomain]         =  domainClass.InDomain(pathsReste2(2:end,:),domainNum);
          end
        % plot3(pathsReste2(:,1),pathsReste2(:,2),pathsReste2(:,3),'Color',[rand rand rand],'LineWidth',4);
         %hold on
