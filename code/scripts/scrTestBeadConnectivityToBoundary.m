@@ -8,9 +8,7 @@
 %Initialisation the framework parameters;
 
 frameWorksParams = SimulationFrameworkParams('numSteps',Inf,'showSimulation',true,'dt',0.1,...
-                    'numChains',10,'objectInteraction',false,'dimension',3,...
-                    'recipeFileName','rcpTestParticleDetachmentFromDomain',...
-                    'recipesFolder','D:\Zha\Project\code\recipes');
+                    'numChains',10,'objectInteraction',false,'dimension',3);
                     
 
 %define a domain
