@@ -10,15 +10,15 @@
 %Actions performed before each step of the Rouse chain.
 <func> PostStepActions </func>
 %Actions performed before each step of the Rouse chain.
-for oIdx = 1:obj.objectManager.numObjects
-                if obj.simulationData.step==2000
+for oIdx = 1:obj.objectManager.numObjects            
+                if obj.simulationData.step==100
                     detachedPartNumber = obj.objectManager.handles.chain(oIdx).params.beadsOnBoundary(end);
                     obj.objectManager.handles.chain(oIdx).params.beadsOnBoundary =obj.objectManager.handles.chain(oIdx).params.beadsOnBoundary(1:end-1);
                     [prevPos curPos] = obj.objectManager.GetPosition(oIdx);
                     prevPos   = prevPos{1};
                     curPos    = curPos{1};
                     particlePosition = curPos(detachedPartNumber,:);
-                    domainCenter = obj.handles.classes.domain.params.domainCenter;
+                    domainCenter = obj.handles.classes.domain.params(obj.params.chain(oIdx).initializeInDomain).domainCenter;
                     vec             = particlePosition-domainCenter;
                     prevParticlePosition          = domainCenter+(1-1e-5)*vec;
                     curPartPosition               = domainCenter+(1-1e-5)*vec;
