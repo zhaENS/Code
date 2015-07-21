@@ -1,6 +1,6 @@
 function points = BeadsOnBoundary(initialPoint,radius,domainCenter, dt, diffusionConst,beadIndices)
 % Choose the position of the beads on the boundary, starting from a random
-% position and diffusing on the boundary to chose the rest
+% position and diffusing on the boundary to chose the remain
 
 % make sure the beadIndices are sorted 
 beadIndices = sort(beadIndices);
