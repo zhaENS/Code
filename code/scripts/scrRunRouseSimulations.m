@@ -4,11 +4,11 @@
 addpath(genpath(fullfile(pwd,'..','..','Utils')));
 
 dimension           = 3;
-numParticles        = 32;
+numParticles        = 100;
 dt                  = 0.01;
 diffusionConst      = 10;
-numSteps            = Inf;
-numSimulations      = 10000;
+numSteps            = 100;
+numSimulations      = 1;
 frictionCoefficient = 1;
 connectedBeads      = [];
 fixedBeads          = [];
