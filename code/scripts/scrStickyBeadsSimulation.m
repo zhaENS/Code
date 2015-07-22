@@ -2,7 +2,7 @@
 
 frameWorksParams = SimulationFrameworkParams('numSteps',Inf,'showSimulation',true,'dt',0.1,...
                     'numChains',10,'objectInteraction',false,'dimension',3,...
-                     'encounterDist',0.6); 
+                     'encounterDist',0.6);
 
 %define a domain
 diffConst = 1;
@@ -47,20 +47,20 @@ cp(4)= ChainParams('numBeads',64,'b',sqrt(frameWorksParams.simulator.dimension),
 
  cp(5)= ChainParams('numBeads',64,'b',sqrt(frameWorksParams.simulator.dimension),'initializeInDomain',1,'springForce',true,...
                    'diffusionConst',diffConst,'forceParams',chainForce,'dt',frameWorksParams.simulator.dt,'fixedBeadsPosition',initialPt,...
-                   'fixedBeadNum',32,'beadsOnBoundary',[1 64]);
+                   'fixedBeadNum',32,'beadsOnBoundary',[1 64],'stickyBeads',[1,64]);
 
  
  cp(6)= ChainParams('numBeads',64,'b',sqrt(frameWorksParams.simulator.dimension),'initializeInDomain',1,'springForce',true,...
                    'diffusionConst',diffConst,'forceParams',chainForce,'dt',frameWorksParams.simulator.dt,'fixedBeadsPosition',initialPt,...
-                   'fixedBeadNum',32,'beadsOnBoundary',[1 64]);
+                   'fixedBeadNum',32,'beadsOnBoundary',[1 64],'stickyBeads',[1,64]);
 
  cp(7)= ChainParams('numBeads',64,'b',sqrt(frameWorksParams.simulator.dimension),'initializeInDomain',1,'springForce',true,...
                    'diffusionConst',diffConst,'forceParams',chainForce,'dt',frameWorksParams.simulator.dt,'fixedBeadsPosition',initialPt,...
-                   'fixedBeadNum',32,'beadsOnBoundary',[1 64]);
+                   'fixedBeadNum',32,'beadsOnBoundary',[1 64],'stickyBeads',[1,64]);
 
  cp(8)= ChainParams('numBeads',64,'b',sqrt(frameWorksParams.simulator.dimension),'initializeInDomain',1,'springForce',true,...
                    'diffusionConst',diffConst,'forceParams',chainForce,'dt',frameWorksParams.simulator.dt,'fixedBeadsPosition',initialPt,...
-                   'fixedBeadNum',32,'beadsOnBoundary',[1 64]);
+                   'fixedBeadNum',32,'beadsOnBoundary',[1 64],'stickyBeads',[1,64]);
 %registre parameters;
 frameWorksParams.SetDomainParams(dp);
 frameWorksParams.SetChainParams(cp);
