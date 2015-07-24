@@ -5,32 +5,19 @@
 %Actions performed before each simulation batch
 <func> PreRunActions </func>
 %Actions performed before each simulation run.
-obj.params.dataRecorder.numCluster(1) = obj.objectManager.numObjects;
 %Note that SimpleRouse class is initialized before each simulation
 <func> PreStepActions </func>
 %Actions performed before each step of the Rouse chain.
 <func> PostStepActions </func>
 %Actions performed before each step of the Rouse chain.
+connectMat  = obj.objectManager.connectivity;
+connectMat  = connectMat & ~diag(true(1,size(connectMat,1)-1),1)  & ~diag(true(1,size(connectMat,1)-1),-1);
 numStep = obj.simulationData.step;
 dt      = obj.params.simulator.dt;
-obj.params.dataRecorder.numCluster(numStep) = obj.objectManager.numObjects;
-if obj.params.dataRecorder.numCluster(numStep)~= obj.params.dataRecorder.numCluster(numStep-1)
-if obj.params.dataRecorder.numCluster(numStep)< obj.params.dataRecorder.numCluster(numStep-1)
-disp('a cluster is formed')
-else
-disp('a cluster is break')
-end
-[obj.params.dataRecorder.stickyTime] = [obj.params.dataRecorder.stickyTime numStep*dt];
-end       
+% find the number of clusters
+[~,s,~] = networkComponents(connectMat);
+obj.params.dataRecorder.numCluster(obj.simulationRound,obj.simulationData.step) = sum(s>1);       
 <func> PostRunActions </func>
 %Actions performed sfter each simulation run.
-stickyTime = obj.params.dataRecorder.stickyTime;
-dt         = obj.params.simulator.dt;
-numStep    = obj.simulationData.step;
-for sIdx = 1:numel(stickyTime)
-nIdx = round(stickyTime(sIdx)/dt);
-obj.params.dataRecorder.numCluster(sIdx) = obj.params.dataRecorder.numCluster(nIdx);
-end
-obj.params.dataRecorder.numCluster(sIdx+1:numStep) = []; 
 <func> PostSimulationBatchActions </func>
 %Actions performed before each simulation batch.

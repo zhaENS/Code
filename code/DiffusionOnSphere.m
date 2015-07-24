@@ -49,7 +49,7 @@ paths = bsxfun(@plus, paths,initialPoint);
 % daspect([1 1 1])
 
 %project the paths back on the sphere;
-distToCenter = pdist2(paths(2:end,:),domainCenter);
+distToCenter = pdist2mex(paths(2:end,:)',domainCenter','euc',[],[],[]);
 t            = radius./distToCenter;
 paths(2:end,:) = bsxfun(@plus, domainCenter,bsxfun(@times,t,bsxfun(@minus,paths(2:end,:),domainCenter)));
 
