@@ -12,12 +12,27 @@
 %Actions performed before each step of the Rouse chain.
 connectMat  = obj.objectManager.connectivity;
 connectMat  = connectMat & ~diag(true(1,size(connectMat,1)-1),1)  & ~diag(true(1,size(connectMat,1)-1),-1);
-numStep = obj.simulationData.step;
+numSim  = obj.simulationRound;
+numStep = obj.simulationData(numSim).step;
 dt      = obj.params.simulator.dt;
 % find the number of clusters
-[~,s,~] = networkComponents(connectMat);
-obj.params.dataRecorder.numCluster(obj.simulationRound,obj.simulationData.step) = sum(s>1);       
+[s,~,~] = networkComponents(connectMat);
+obj.dataRecorder.params.numCluster{numSim}(numStep) = s;       
 <func> PostRunActions </func>
 %Actions performed sfter each simulation run.
+numSim  = obj.simulationRound;
+numStep = obj.simulationData(numSim).step;
+idx= min(find(obj.dataRecorder.params.numCluster{numSim}~=0));
+k = 1;
+for nIdx = idx:numStep-1
+if obj.dataRecorder.params.numCluster{numSim}(nIdx)~=obj.dataRecorder.params.numCluster{numSim}(nIdx+1)
+cIdx(k) = nIdx+1;
+k = k+1;
+end
+end
+numCluster(numSim,1) =  obj.dataRecorder.params.numCluster{numSim}(idx);
+numCluster(numSim,2:k)= obj.dataRecorder.params.numCluster{numSim}(cIdx);
+obj.dataRecorder.params.numCluster{numSim} = zeros(1,k);
+obj.dataRecorder.params.numCluster{numSim}= numCluster(numSim,:);
 <func> PostSimulationBatchActions </func>
 %Actions performed before each simulation batch.
