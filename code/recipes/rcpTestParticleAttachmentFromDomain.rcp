@@ -1,0 +1,68 @@
+<description> test recipe for detachment of beads from the boundary of a sphere</description>
+<func> SetRecipeParams </func>
+%Insert parameters as obj.params.[paramsName]=[paramsValue]
+<func> PreSimulationBatchActions </func>
+%Actions performed before each simulation batch
+<func> PreRunActions </func>
+%Actions performed before each simulation run.
+%Note that SimpleRouse class is initialized before each simulation
+<func> PreStepActions </func>
+%Actions performed before each step of the Rouse chain.
+<func> PostStepActions </func>
+%Actions performed before each step of the Rouse chain.
+            AttachProbability = obj.objectManager.objParams.probAttachToBoundary;
+            encounterDistance = obj.params.simulator.encounterDist;
+            for oIdx=1:obj.objectManager.numObjects   
+                    [prevPosition,curPosition]    = obj.objectManager.GetPositionAsOne(oIdx);
+                    D                  = pdist2mex(curPosition',obj.params.domain.domainCenter','euc',[],[],[]);
+                    D                  = (obj.params.domain.domainWidth-D).^2;
+                    [col,~]             = find(D<encounterDistance.^2& D>eps);
+                    if ~isempty(col)
+                        r   = rand(numel(col),1);
+                        attachIndx = r<AttachProbability;
+                        for rIdx = 1:numel(col)
+                            if attachIndx(rIdx)
+                                sprintf('Attachment to the boundary! beads %d of chain %d',col(rIdx),oIdx)
+                                %add the beads to the beadsOnBoundary;
+                                memberList = obj.objectManager.map.GetObjectMembers(oIdx);
+                                if numel(memberList)==1
+                                    [obj.objectManager.handles.chain(memberList).params.beadsOnBoundary] = ...
+                                        [obj.objectManager.handles.chain(memberList).params.beadsOnBoundary col(rIdx)];
+                                    obj.objectManager.handles.chain(memberList).params.beadsOnBoundary = ...
+                                        sort(obj.objectManager.handles.chain(memberList).params.beadsOnBoundary);
+                                else
+                                    idx = find(col(rIdx)<=obj.objectManager.objParams(memberList(1)).numBeads);
+                                    for mIdx = 1:numel(memberList)
+                                        if idx
+                                            [obj.objectManager.handles.chain(memberList((mIdx))).params.beadsOnBoundary] = ...
+                                                [obj.objectManager.handles.chain(memberList(mIdx)).params.beadsOnBoundary col(rIdx)];
+                                            obj.objectManager.handles.chain(memberList(mIdx)).params.beadsOnBoundary = ...
+                                                sort(obj.objectManager.handles.chain(memberList(mIdx)).params.beadsOnBoundary);
+                                        else
+                                            idx = idx +obj.objectManager.objParams(memberList(mIdx+1)).numBeads;
+                                            idx = find(col(rIdx)<=idx);
+                                        end
+                                    end
+                                end
+                            %update the position such that they are on the
+                            %boundary;
+                            thetaCur  = atan(curPosition(col(rIdx),2)/curPosition(col(rIdx),1));
+                            phiCur    = atan(sqrt(curPosition(col(rIdx),1).^2+curPosition(col(rIdx),2).^2)./curPosition(col(rIdx),3));
+                            thetaPrev = atan(prevPosition(col(rIdx),2)/prevPosition(col(rIdx),1));
+                            phiPrev   = atan(sqrt(prevPosition(col(rIdx),1).^2+prevPosition(col(rIdx),2).^2)./prevPosition(col(rIdx),3));
+                            curPosition(col(rIdx),1)  = obj.params.domain.domainWidth*sin(phiCur)*cos(thetaCur)+obj.params.domain.domainCenter(1);
+                            curPosition(col(rIdx),2)  = obj.params.domain.domainWidth*sin(thetaCur)*sin(phiCur)+obj.params.domain.domainCenter(2);
+                            curPosition(col(rIdx),3)  = obj.params.domain.domainWidth*cos(phiCur)+obj.params.domain.domainCenter(3);
+                            prevPosition(col(rIdx),1) = obj.params.domain.domainWidth*sin(phiPrev)*cos(thetaPrev);
+                            prevPosition(col(rIdx),2) = obj.params.domain.domainWidth*sin(thetaPrev)*sin(phiPrev);
+                            prevPosition(col(rIdx),3) = obj.params.domain.domainWidth*cos(phiPrev);
+                            obj.objectManager.DealCurrentPosition(oIdx,curPosition);
+                            obj.objectManager.DealPreviousPosition(oIdx,prevPosition);
+                            end
+                        end
+                    end
+                end
+<func> PostRunActions </func>
+%Actions performed sfter each simulation run.
+<func> PostSimulationBatchActions </func>
+%Actions performed before each simulation batch.
