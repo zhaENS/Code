@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  4 JUN 2015 18:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.29)  17 JUL 2015 18:11
 entering extended mode
 **report_polymer.tex
 (report_polymer.tex
@@ -758,25 +758,25 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfig@bottom=\skip71
 )
 (report_polymer.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 23.
  ("d:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 21.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 23.
 
 ("d:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -796,210 +796,1154 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \everyMPtoPDFconversion=\toks26
 )
 \c@lstlisting=\count133
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 23.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 25.
  ("d:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 23.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 25.
 
 
 ("d:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 23.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 25.
 
 
 ("d:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 23.
+(Font)              <12> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 23.
+(Font)              <8> on input line 25.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 23.
+(Font)              <6> on input line 25.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (10.27684pt too wide) in paragraph at lines 27--27
+Overfull \hbox (10.27684pt too wide) in paragraph at lines 29--29
 []\OT1/lmr/bx/n/14.4 The ran-dom walk model:the freely jointed chain 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 30.
+(Font)              <10> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 30.
+(Font)              <7> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 30.
+(Font)              <5> on input line 32.
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 52.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 54.
 ("d:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Package epstopdf Info: Source file: <1.eps>
+Package epstopdf Info: Source file: <figureForTex/1.eps>
 (epstopdf)                    date: 2015-04-29 17:24:24
 (epstopdf)                    size: 17435 bytes
-(epstopdf)             Output file: <1-eps-converted-to.pdf>
+(epstopdf)             Output file: <figureForTex/1-eps-converted-to.pdf>
 (epstopdf)                    date: 2015-04-29 17:25:12
 (epstopdf)                    size: 9687 bytes
-(epstopdf)             Command: <epstopdf --outfile=1-eps-converted-to.pdf 1.ep
-s>
-(epstopdf)             \includegraphics on input line 66.
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/1-eps-converte
+d-to.pdf figureForTex/1.eps>
+(epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
 
-<1-eps-converted-to.pdf, id=8, 963.6pt x 665.48625pt>
-File: 1-eps-converted-to.pdf Graphic file (type pdf)
+<figureForTex/1-eps-converted-to.pdf, id=8, 963.6pt x 665.48625pt>
+File: figureForTex/1-eps-converted-to.pdf Graphic file (type pdf)
 
-<use 1-eps-converted-to.pdf>
-Package pdftex.def Info: 1-eps-converted-to.pdf used on input line 66.
+<use figureForTex/1-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/1-eps-converted-to.pdf used on input line
+ 68.
 (pdftex.def)             Requested size: 231.26378pt x 159.70981pt.
 
-Overfull \hbox (58.76378pt too wide) in paragraph at lines 66--67
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 68--69
  [][] 
  []
 
-Package epstopdf Info: Source file: <2.eps>
+Package epstopdf Info: Source file: <figureForTex/2.eps>
 (epstopdf)                    date: 2015-04-29 17:24:56
 (epstopdf)                    size: 17435 bytes
-(epstopdf)             Output file: <2-eps-converted-to.pdf>
+(epstopdf)             Output file: <figureForTex/2-eps-converted-to.pdf>
 (epstopdf)                    date: 2015-04-29 17:25:12
 (epstopdf)                    size: 9814 bytes
-(epstopdf)             Command: <epstopdf --outfile=2-eps-converted-to.pdf 2.ep
-s>
-(epstopdf)             \includegraphics on input line 71.
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/2-eps-converte
+d-to.pdf figureForTex/2.eps>
+(epstopdf)             \includegraphics on input line 73.
 Package epstopdf Info: Output file is already uptodate.
-<2-eps-converted-to.pdf, id=9, 963.6pt x 665.48625pt>
-File: 2-eps-converted-to.pdf Graphic file (type pdf)
+<figureForTex/2-eps-converted-to.pdf, id=9, 963.6pt x 665.48625pt>
+File: figureForTex/2-eps-converted-to.pdf Graphic file (type pdf)
 
-<use 2-eps-converted-to.pdf>
-Package pdftex.def Info: 2-eps-converted-to.pdf used on input line 71.
+<use figureForTex/2-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/2-eps-converted-to.pdf used on input line
+ 73.
 (pdftex.def)             Requested size: 231.26378pt x 159.70981pt.
 
-Overfull \hbox (58.76378pt too wide) in paragraph at lines 71--72
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 73--74
  [][] 
  []
 
 [2]
-Package epstopdf Info: Source file: <PDF.eps>
+Package epstopdf Info: Source file: <figureForTex/PDF.eps>
 (epstopdf)                    date: 2015-06-04 12:16:11
 (epstopdf)                    size: 40627 bytes
-(epstopdf)             Output file: <PDF-eps-converted-to.pdf>
+(epstopdf)             Output file: <figureForTex/PDF-eps-converted-to.pdf>
 (epstopdf)                    date: 2015-06-04 12:16:14
 (epstopdf)                    size: 11782 bytes
-(epstopdf)             Command: <epstopdf --outfile=PDF-eps-converted-to.pdf PD
-F.eps>
-(epstopdf)             \includegraphics on input line 92.
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/PDF-eps-conver
+ted-to.pdf figureForTex/PDF.eps>
+(epstopdf)             \includegraphics on input line 94.
 Package epstopdf Info: Output file is already uptodate.
- <PDF-eps-converted-to.pdf, id=23, 420.57124pt x 316.18124pt>
-File: PDF-eps-converted-to.pdf Graphic file (type pdf)
+ <figureForTex/PDF-eps-converted-to.pdf, id=23, 420.57124pt x 316.18124pt>
+File: figureForTex/PDF-eps-converted-to.pdf Graphic file (type pdf)
 
-<use PDF-eps-converted-to.pdf>
-Package pdftex.def Info: PDF-eps-converted-to.pdf used on input line 92.
+<use figureForTex/PDF-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/PDF-eps-converted-to.pdf used on input li
+ne 94.
 (pdftex.def)             Requested size: 448.07378pt x 336.86322pt.
 
-Overfull \hbox (103.07378pt too wide) in paragraph at lines 92--93
+Overfull \hbox (103.07378pt too wide) in paragraph at lines 94--95
 [][] 
  []
 
-[3 <./1-eps-converted-to.pdf> <./2-eps-converted-to.pdf>] [4 <./PDF-eps-convert
-ed-to.pdf>]
-Package epstopdf Info: Source file: <rouseM.eps>
+[3 <./figureForTex/1-eps-converted-to.pdf> <./figureForTex/2-eps-converted-to.p
+df>] [4 <./figureForTex/PDF-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figureForTex/rouseM.eps>
 (epstopdf)                    date: 2015-06-04 11:28:02
 (epstopdf)                    size: 11210 bytes
-(epstopdf)             Output file: <rouseM-eps-converted-to.pdf>
+(epstopdf)             Output file: <figureForTex/rouseM-eps-converted-to.pdf>
 (epstopdf)                    date: 2015-06-04 11:30:23
 (epstopdf)                    size: 5214 bytes
-(epstopdf)             Command: <epstopdf --outfile=rouseM-eps-converted-to.pdf
- rouseM.eps>
-(epstopdf)             \includegraphics on input line 129.
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/rouseM-eps-con
+verted-to.pdf figureForTex/rouseM.eps>
+(epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
- <rouseM-eps-converted-to.pdf, id=48, 420.57124pt x 316.18124pt>
-File: rouseM-eps-converted-to.pdf Graphic file (type pdf)
 
-<use rouseM-eps-converted-to.pdf>
-Package pdftex.def Info: rouseM-eps-converted-to.pdf used on input line 129.
+<figureForTex/rouseM-eps-converted-to.pdf, id=48, 420.57124pt x 316.18124pt>
+File: figureForTex/rouseM-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figureForTex/rouseM-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/rouseM-eps-converted-to.pdf used on input
+ line 131.
 (pdftex.def)             Requested size: 231.26378pt x 173.86162pt.
 
-Overfull \hbox (58.76378pt too wide) in paragraph at lines 129--130
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 131--132
  [][] 
  []
 
-Package epstopdf Info: Source file: <rouseMF.eps>
+Package epstopdf Info: Source file: <figureForTex/rouseMF.eps>
 (epstopdf)                    date: 2015-06-04 11:32:47
 (epstopdf)                    size: 11211 bytes
-(epstopdf)             Output file: <rouseMF-eps-converted-to.pdf>
+(epstopdf)             Output file: <figureForTex/rouseMF-eps-converted-to.pdf>
+
 (epstopdf)                    date: 2015-06-04 11:32:51
 (epstopdf)                    size: 5242 bytes
-(epstopdf)             Command: <epstopdf --outfile=rouseMF-eps-converted-to.pd
-f rouseMF.eps>
-(epstopdf)             \includegraphics on input line 134.
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/rouseMF-eps-co
+nverted-to.pdf figureForTex/rouseMF.eps>
+(epstopdf)             \includegraphics on input line 136.
 Package epstopdf Info: Output file is already uptodate.
-<rouseMF-eps-converted-to.pdf, id=49, 420.57124pt x 316.18124pt>
-File: rouseMF-eps-converted-to.pdf Graphic file (type pdf)
+<figureForTex/rouseMF-eps-converted-to.pdf, id=49, 420.57124pt x 316.18124pt>
+File: figureForTex/rouseMF-eps-converted-to.pdf Graphic file (type pdf)
 
-<use rouseMF-eps-converted-to.pdf>
-Package pdftex.def Info: rouseMF-eps-converted-to.pdf used on input line 134.
+<use figureForTex/rouseMF-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/rouseMF-eps-converted-to.pdf used on inpu
+t line 136.
 (pdftex.def)             Requested size: 231.26378pt x 173.86162pt.
 
-Overfull \hbox (58.76378pt too wide) in paragraph at lines 134--135
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 136--137
  [][] 
  []
 
-[5 <./rouseM-eps-converted-to.pdf> <./rouseMF-eps-converted-to.pdf>]
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 155.
+<figureForTex/intro.jpg, id=50, 553.31718pt x 353.06906pt>
+File: figureForTex/intro.jpg Graphic file (type jpg)
+
+<use figureForTex/intro.jpg>
+Package pdftex.def Info: figureForTex/intro.jpg used on input line 145.
+(pdftex.def)             Requested size: 303.53377pt x 193.68216pt.
+ [5 <./figureForTex/rouseM-eps-converted-to.pdf> <./figureForTex/rouseMF-eps-co
+nverted-to.pdf>]
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 162.
 
 
 ("d:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 163--164
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/2beads_3beads.eps>
+(epstopdf)                    date: 2015-06-10 11:52:45
+(epstopdf)                    size: 11221 bytes
+(epstopdf)             Output file: <figureForTex/2beads_3beads-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2015-06-10 11:59:18
+(epstopdf)                    size: 4287 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/2beads_3beads-
+eps-converted-to.pdf figureForTex/2beads_3beads.eps>
+(epstopdf)             \includegraphics on input line 167.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/2beads_3beads-eps-converted-to.pdf, id=62, 534.99875pt x 426.5937
+5pt>
+File: figureForTex/2beads_3beads-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/2beads_3beads-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/2beads_3beads-eps-converted-to.pdf used o
+n input line 167.
+(pdftex.def)             Requested size: 448.07378pt x 357.29482pt.
+
+Overfull \hbox (103.07378pt too wide) in paragraph at lines 167--168
+ [][] 
+ []
+
+[6 <./figureForTex/intro.jpg>] [7 <./figureForTex/2beads_3beads-eps-converted-t
+o.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--173
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 185--186
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/beads1_2_32.eps>
+(epstopdf)                    date: 2015-06-10 15:57:57
+(epstopdf)                    size: 11368 bytes
+(epstopdf)             Output file: <figureForTex/beads1_2_32-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-06-10 17:22:02
+(epstopdf)                    size: 4565 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_2_32-ep
+s-converted-to.pdf figureForTex/beads1_2_32.eps>
+(epstopdf)             \includegraphics on input line 190.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_2_32-eps-converted-to.pdf, id=73, 534.99875pt x 424.58624p
+t>
+File: figureForTex/beads1_2_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_2_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_2_32-eps-converted-to.pdf used on 
+input line 190.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 190--191
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_2_32.jpg, id=74, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_2_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_2_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_2_32.jpg used on input li
+ne 194.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 188--196
+[][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/beads1_3_32.eps>
+(epstopdf)                    date: 2015-06-10 16:00:27
+(epstopdf)                    size: 11519 bytes
+(epstopdf)             Output file: <figureForTex/beads1_3_32-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-06-10 17:24:22
+(epstopdf)                    size: 4545 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_3_32-ep
+s-converted-to.pdf figureForTex/beads1_3_32.eps>
+(epstopdf)             \includegraphics on input line 201.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_3_32-eps-converted-to.pdf, id=75, 534.99875pt x 424.58624p
+t>
+File: figureForTex/beads1_3_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_3_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_3_32-eps-converted-to.pdf used on 
+input line 201.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 201--202
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_3_32.jpg, id=76, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_3_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_3_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_3_32.jpg used on input li
+ne 205.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 199--207
+[][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/beads1_4_32.eps>
+(epstopdf)                    date: 2015-06-10 16:03:08
+(epstopdf)                    size: 11192 bytes
+(epstopdf)             Output file: <figureForTex/beads1_4_32-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-06-10 17:24:22
+(epstopdf)                    size: 4541 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_4_32-ep
+s-converted-to.pdf figureForTex/beads1_4_32.eps>
+(epstopdf)             \includegraphics on input line 212.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_4_32-eps-converted-to.pdf, id=77, 534.99875pt x 424.58624p
+t>
+File: figureForTex/beads1_4_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_4_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_4_32-eps-converted-to.pdf used on 
+input line 212.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 212--213
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_4_32.jpg, id=78, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_4_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_4_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_4_32.jpg used on input li
+ne 216.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 210--218
+[][][] 
+ []
+
+[8 <./figureForTex/beads1_2_32-eps-converted-to.pdf> <./figureForTex/encounterB
+eads1_2_32.jpg>]
+Package epstopdf Info: Source file: <figureForTex/beads1_5_32.eps>
+(epstopdf)                    date: 2015-06-10 16:05:21
+(epstopdf)                    size: 11131 bytes
+(epstopdf)             Output file: <figureForTex/beads1_5_32-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-06-10 17:24:23
+(epstopdf)                    size: 4471 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_5_32-ep
+s-converted-to.pdf figureForTex/beads1_5_32.eps>
+(epstopdf)             \includegraphics on input line 223.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_5_32-eps-converted-to.pdf, id=85, 534.99875pt x 424.58624p
+t>
+File: figureForTex/beads1_5_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_5_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_5_32-eps-converted-to.pdf used on 
+input line 223.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 223--224
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_5_32.jpg, id=86, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_5_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_5_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_5_32.jpg used on input li
+ne 227.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 221--229
+[][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/beads1_6_32.eps>
+(epstopdf)                    date: 2015-06-10 16:07:26
+(epstopdf)                    size: 11528 bytes
+(epstopdf)             Output file: <figureForTex/beads1_6_32-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-06-10 17:24:24
+(epstopdf)                    size: 4643 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_6_32-ep
+s-converted-to.pdf figureForTex/beads1_6_32.eps>
+(epstopdf)             \includegraphics on input line 234.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_6_32-eps-converted-to.pdf, id=87, 534.99875pt x 424.58624p
+t>
+File: figureForTex/beads1_6_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_6_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_6_32-eps-converted-to.pdf used on 
+input line 234.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 234--235
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_6_32.jpg, id=88, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_6_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_6_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_6_32.jpg used on input li
+ne 238.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 232--240
+[][][] 
+ []
+
+[9 <./figureForTex/beads1_3_32-eps-converted-to.pdf> <./figureForTex/encounterB
+eads1_3_32.jpg> <./figureForTex/beads1_4_32-eps-converted-to.pdf> <./figureForT
+ex/encounterBeads1_4_32.jpg>]
+Package epstopdf Info: Source file: <figureForTex/beads1_7_32.eps>
+(epstopdf)                    date: 2015-06-10 16:12:12
+(epstopdf)                    size: 11584 bytes
+(epstopdf)             Output file: <figureForTex/beads1_7_32-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-06-10 17:24:24
+(epstopdf)                    size: 4664 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_7_32-ep
+s-converted-to.pdf figureForTex/beads1_7_32.eps>
+(epstopdf)             \includegraphics on input line 245.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_7_32-eps-converted-to.pdf, id=98, 534.99875pt x 424.58624p
+t>
+File: figureForTex/beads1_7_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_7_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_7_32-eps-converted-to.pdf used on 
+input line 245.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 245--246
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_7_32.jpg, id=99, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_7_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_7_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_7_32.jpg used on input li
+ne 249.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 243--251
+[][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/beads1_8_32.eps>
+(epstopdf)                    date: 2015-06-10 16:12:03
+(epstopdf)                    size: 11250 bytes
+(epstopdf)             Output file: <figureForTex/beads1_8_32-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-06-10 17:24:25
+(epstopdf)                    size: 4560 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_8_32-ep
+s-converted-to.pdf figureForTex/beads1_8_32.eps>
+(epstopdf)             \includegraphics on input line 256.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_8_32-eps-converted-to.pdf, id=100, 534.99875pt x 424.58624
+pt>
+File: figureForTex/beads1_8_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_8_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_8_32-eps-converted-to.pdf used on 
+input line 256.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 256--257
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_8_32.jpg, id=101, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_8_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_8_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_8_32.jpg used on input li
+ne 260.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 254--263
+[][][] 
+ []
+
+[10 <./figureForTex/beads1_5_32-eps-converted-to.pdf> <./figureForTex/encounter
+Beads1_5_32.jpg> <./figureForTex/beads1_6_32-eps-converted-to.pdf> <./figureFor
+Tex/encounterBeads1_6_32.jpg>]
+Package epstopdf Info: Source file: <figureForTex/beads1_16_32.eps>
+(epstopdf)                    date: 2015-06-10 16:37:09
+(epstopdf)                    size: 11261 bytes
+(epstopdf)             Output file: <figureForTex/beads1_16_32-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2015-06-10 17:24:31
+(epstopdf)                    size: 4500 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads1_16_32-e
+ps-converted-to.pdf figureForTex/beads1_16_32.eps>
+(epstopdf)             \includegraphics on input line 268.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads1_16_32-eps-converted-to.pdf, id=111, 534.99875pt x 424.5862
+4pt>
+File: figureForTex/beads1_16_32-eps-converted-to.pdf Graphic file (type pdf)
+ <use figureForTex/beads1_16_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads1_16_32-eps-converted-to.pdf used on
+ input line 268.
+(pdftex.def)             Requested size: 231.26378pt x 183.53384pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 268--269
+ [][] 
+ []
+
+<figureForTex/encounterBeads1_16_32.jpg, id=112, 959.08313pt x 589.4522pt>
+File: figureForTex/encounterBeads1_16_32.jpg Graphic file (type jpg)
+
+<use figureForTex/encounterBeads1_16_32.jpg>
+Package pdftex.def Info: figureForTex/encounterBeads1_16_32.jpg used on input l
+ine 272.
+(pdftex.def)             Requested size: 231.26378pt x 142.12799pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 266--275
+[][][] 
+ []
+
+[11 <./figureForTex/beads1_7_32-eps-converted-to.pdf> <./figureForTex/encounter
+Beads1_7_32.jpg> <./figureForTex/beads1_8_32-eps-converted-to.pdf> <./figureFor
+Tex/encounterBeads1_8_32.jpg>]
+Package epstopdf Info: Source file: <figureForTex/beads32meanEncounterTime.eps>
+
+(epstopdf)                    date: 2015-06-10 19:07:32
+(epstopdf)                    size: 10953 bytes
+(epstopdf)             Output file: <figureForTex/beads32meanEncounterTime-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2015-06-10 19:07:43
+(epstopdf)                    size: 4820 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads32meanEnc
+ounterTime-eps-converted-to.pdf figureForTex/beads32meanEncounterTime.eps>
+(epstopdf)             \includegraphics on input line 280.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads32meanEncounterTime-eps-converted-to.pdf, id=122, 534.99875p
+t x 424.58624pt>
+File: figureForTex/beads32meanEncounterTime-eps-converted-to.pdf Graphic file (
+type pdf)
+
+<use figureForTex/beads32meanEncounterTime-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads32meanEncounterTime-eps-converted-to
+.pdf used on input line 280.
+(pdftex.def)             Requested size: 361.34999pt x 286.78418pt.
+
+Overfull \hbox (16.34999pt too wide) in paragraph at lines 280--281
+ [][] 
+ []
+
+[12 <./figureForTex/beads1_16_32-eps-converted-to.pdf> <./figureForTex/encounte
+rBeads1_16_32.jpg> <./figureForTex/beads32meanEncounterTime-eps-converted-to.pd
+f>]
+Package epstopdf Info: Source file: <figureForTex/beads32meanEncounterTimeAll.e
+ps>
+(epstopdf)                    date: 2015-07-10 12:19:08
+(epstopdf)                    size: 10484 bytes
+(epstopdf)             Output file: <figureForTex/beads32meanEncounterTimeAll-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-10 12:19:10
+(epstopdf)                    size: 3971 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/beads32meanEnc
+ounterTimeAll-eps-converted-to.pdf figureForTex/beads32meanEncounterTimeAll.eps
+>
+(epstopdf)             \includegraphics on input line 285.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/beads32meanEncounterTimeAll-eps-converted-to.pdf, id=132, 712.662
+5pt x 421.575pt>
+File: figureForTex/beads32meanEncounterTimeAll-eps-converted-to.pdf Graphic fil
+e (type pdf)
+
+<use figureForTex/beads32meanEncounterTimeAll-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/beads32meanEncounterTimeAll-eps-converted
+-to.pdf used on input line 285.
+(pdftex.def)             Requested size: 433.62pt x 256.50423pt.
+
+Overfull \hbox (88.62pt too wide) in paragraph at lines 285--286
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--286
 
  []
 
-[6] (report_polymer.aux) ) 
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 300--301
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[13 <./figureForTex/beads32meanEncounterTimeAll-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 317--318
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/compare1_2_64and1_2_32.eps>
+(epstopdf)                    date: 2015-06-10 18:43:56
+(epstopdf)                    size: 14639 bytes
+(epstopdf)             Output file: <figureForTex/compare1_2_64and1_2_32-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2015-06-10 18:46:35
+(epstopdf)                    size: 5827 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/compare1_2_64a
+nd1_2_32-eps-converted-to.pdf figureForTex/compare1_2_64and1_2_32.eps>
+(epstopdf)             \includegraphics on input line 323.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/compare1_2_64and1_2_32-eps-converted-to.pdf, id=140, 691.58376pt 
+x 418.56375pt>
+File: figureForTex/compare1_2_64and1_2_32-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use figureForTex/compare1_2_64and1_2_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/compare1_2_64and1_2_32-eps-converted-to.p
+df used on input line 323.
+(pdftex.def)             Requested size: 231.26378pt x 139.96584pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 323--324
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/compare1_3_64and1_3_32.eps>
+(epstopdf)                    date: 2015-06-10 18:53:16
+(epstopdf)                    size: 14510 bytes
+(epstopdf)             Output file: <figureForTex/compare1_3_64and1_3_32-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2015-06-10 18:53:19
+(epstopdf)                    size: 5652 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/compare1_3_64a
+nd1_3_32-eps-converted-to.pdf figureForTex/compare1_3_64and1_3_32.eps>
+(epstopdf)             \includegraphics on input line 328.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/compare1_3_64and1_3_32-eps-converted-to.pdf, id=141, 691.58376pt 
+x 418.56375pt>
+File: figureForTex/compare1_3_64and1_3_32-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use figureForTex/compare1_3_64and1_3_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/compare1_3_64and1_3_32-eps-converted-to.p
+df used on input line 328.
+(pdftex.def)             Requested size: 231.26378pt x 139.96584pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 321--331
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--331
+
+ []
+
+Package epstopdf Info: Source file: <figureForTex/compare1_4_64and1_4_32.eps>
+(epstopdf)                    date: 2015-06-10 18:44:19
+(epstopdf)                    size: 14348 bytes
+(epstopdf)             Output file: <figureForTex/compare1_4_64and1_4_32-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2015-06-10 18:46:37
+(epstopdf)                    size: 5577 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/compare1_4_64a
+nd1_4_32-eps-converted-to.pdf figureForTex/compare1_4_64and1_4_32.eps>
+(epstopdf)             \includegraphics on input line 335.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/compare1_4_64and1_4_32-eps-converted-to.pdf, id=142, 691.58376pt 
+x 418.56375pt>
+File: figureForTex/compare1_4_64and1_4_32-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use figureForTex/compare1_4_64and1_4_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/compare1_4_64and1_4_32-eps-converted-to.p
+df used on input line 335.
+(pdftex.def)             Requested size: 231.26378pt x 139.96584pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 335--336
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/compare1_5_64and1_5_32.eps>
+(epstopdf)                    date: 2015-06-10 18:44:49
+(epstopdf)                    size: 14596 bytes
+(epstopdf)             Output file: <figureForTex/compare1_5_64and1_5_32-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2015-06-10 18:46:38
+(epstopdf)                    size: 5802 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/compare1_5_64a
+nd1_5_32-eps-converted-to.pdf figureForTex/compare1_5_64and1_5_32.eps>
+(epstopdf)             \includegraphics on input line 340.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/compare1_5_64and1_5_32-eps-converted-to.pdf, id=143, 691.58376pt 
+x 418.56375pt>
+File: figureForTex/compare1_5_64and1_5_32-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use figureForTex/compare1_5_64and1_5_32-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/compare1_5_64and1_5_32-eps-converted-to.p
+df used on input line 340.
+(pdftex.def)             Requested size: 231.26378pt x 139.96584pt.
+
+Overfull \hbox (172.5pt too wide) in paragraph at lines 333--343
+[][][] 
+ []
+
+Package epstopdf Info: Source file: <figureForTex/meanEncounterTimeCompareBis.e
+ps>
+(epstopdf)                    date: 2015-07-02 11:58:48
+(epstopdf)                    size: 12196 bytes
+(epstopdf)             Output file: <figureForTex/meanEncounterTimeCompareBis-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-02 11:59:26
+(epstopdf)                    size: 7510 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/meanEncounterT
+imeCompareBis-eps-converted-to.pdf figureForTex/meanEncounterTimeCompareBis.eps
+>
+(epstopdf)             \includegraphics on input line 347.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/meanEncounterTimeCompareBis-eps-converted-to.pdf, id=144, 682.55p
+t x 424.58624pt>
+File: figureForTex/meanEncounterTimeCompareBis-eps-converted-to.pdf Graphic fil
+e (type pdf)
+
+<use figureForTex/meanEncounterTimeCompareBis-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/meanEncounterTimeCompareBis-eps-converted
+-to.pdf used on input line 347.
+(pdftex.def)             Requested size: 469.75499pt x 292.21977pt.
+
+Overfull \hbox (124.75499pt too wide) in paragraph at lines 347--348
+ [][] 
+ []
+
+[14 <./figureForTex/compare1_2_64and1_2_32-eps-converted-to.pdf> <./figureForTe
+x/compare1_3_64and1_3_32-eps-converted-to.pdf> <./figureForTex/compare1_4_64and
+1_4_32-eps-converted-to.pdf> <./figureForTex/compare1_5_64and1_5_32-eps-convert
+ed-to.pdf>]
+<figureForTex/chainsFixedBeads.jpg, id=160, 553.31718pt x 353.06906pt>
+File: figureForTex/chainsFixedBeads.jpg Graphic file (type jpg)
+
+<use figureForTex/chainsFixedBeads.jpg>
+Package pdftex.def Info: figureForTex/chainsFixedBeads.jpg used on input line 3
+58.
+(pdftex.def)             Requested size: 361.34999pt x 230.57503pt.
+
+Overfull \hbox (16.34999pt too wide) in paragraph at lines 358--359
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--359
+
+ []
+
+[15 <./figureForTex/meanEncounterTimeCompareBis-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 362--365
+
+ []
+
+<figureForTex/structure.jpg, id=167, 959.08313pt x 589.4522pt>
+File: figureForTex/structure.jpg Graphic file (type jpg)
+
+<use figureForTex/structure.jpg>
+Package pdftex.def Info: figureForTex/structure.jpg used on input line 370.
+(pdftex.def)             Requested size: 476.98244pt x 293.15137pt.
+
+Overfull \hbox (131.98244pt too wide) in paragraph at lines 370--371
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--371
+
+ []
+
+[16 <./figureForTex/chainsFixedBeads.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+
+ []
+
+[17 <./figureForTex/structure.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 393--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--402
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
+
+ []
+
+
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 428--429
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (101.40454pt too wide) in paragraph at lines 429--430
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 430--431
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+<figureForTex/3func.jpg, id=175, 553.31718pt x 353.06906pt>
+File: figureForTex/3func.jpg Graphic file (type jpg)
+
+<use figureForTex/3func.jpg>
+Package pdftex.def Info: figureForTex/3func.jpg used on input line 433.
+(pdftex.def)             Requested size: 303.53377pt x 193.68216pt.
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
+
+ []
+
+<figureForTex/diffuseOnSphere.jpg, id=182, 553.31718pt x 353.06906pt>
+File: figureForTex/diffuseOnSphere.jpg Graphic file (type jpg)
+
+<use figureForTex/diffuseOnSphere.jpg>
+Package pdftex.def Info: figureForTex/diffuseOnSphere.jpg used on input line 44
+9.
+(pdftex.def)             Requested size: 216.81pt x 138.34286pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
+
+ []
+
+[19 <./figureForTex/3func.jpg> <./figureForTex/diffuseOnSphere.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 454--456
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--499
+
+ []
+
+Package epstopdf Info: Source file: <figureForTex/pathAfterProject.eps>
+(epstopdf)                    date: 2015-06-22 18:01:47
+(epstopdf)                    size: 58942 bytes
+(epstopdf)             Output file: <figureForTex/pathAfterProject-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2015-06-22 18:02:32
+(epstopdf)                    size: 12875 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/pathAfterProje
+ct-eps-converted-to.pdf figureForTex/pathAfterProject.eps>
+(epstopdf)             \includegraphics on input line 512.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/pathAfterProject-eps-converted-to.pdf, id=187, 682.55pt x 412.541
+24pt>
+File: figureForTex/pathAfterProject-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use figureForTex/pathAfterProject-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/pathAfterProject-eps-converted-to.pdf use
+d on input line 512.
+(pdftex.def)             Requested size: 469.75499pt x 283.92986pt.
+
+Overfull \hbox (124.75499pt too wide) in paragraph at lines 512--513
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--513
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--523
+
+ []
+
+
+Overfull \hbox (69.41656pt too wide) in paragraph at lines 525--533
+[]$\OML/lmm/m/it/10 DiffusionOnSphere \OT1/lmr/m/n/10 =[]\OMS/lmsy/m/n/10 )$ $[
+] \OT1/lmr/m/n/10 =[]\OMS/lmsy/m/n/10 ) \OML/lmm/m/it/10 BeadsOnboundary$ $[]$ 
+
+ []
+
+[21 <./figureForTex/pathAfterProject-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figureForTex/bOnB1.eps>
+(epstopdf)                    date: 2015-06-11 14:40:23
+(epstopdf)                    size: 55579 bytes
+(epstopdf)             Output file: <figureForTex/bOnB1-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-11 14:40:31
+(epstopdf)                    size: 11908 bytes
+(epstopdf)             Command: <epstopdf --outfile=figureForTex/bOnB1-eps-conv
+erted-to.pdf figureForTex/bOnB1.eps>
+(epstopdf)             \includegraphics on input line 540.
+Package epstopdf Info: Output file is already uptodate.
+
+<figureForTex/bOnB1-eps-converted-to.pdf, id=198, 704.6325pt x 412.54124pt>
+File: figureForTex/bOnB1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figureForTex/bOnB1-eps-converted-to.pdf>
+Package pdftex.def Info: figureForTex/bOnB1-eps-converted-to.pdf used on input 
+line 540.
+(pdftex.def)             Requested size: 433.62pt x 253.87187pt.
+
+Overfull \hbox (88.62pt too wide) in paragraph at lines 540--541
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
+
+ []
+
+[22 <./figureForTex/bOnB1-eps-converted-to.pdf>]
+<figureForTex/step335.jpg, id=206, 741.52031pt x 646.66594pt>
+File: figureForTex/step335.jpg Graphic file (type jpg)
+
+<use figureForTex/step335.jpg>
+Package pdftex.def Info: figureForTex/step335.jpg used on input line 573.
+(pdftex.def)             Requested size: 231.26378pt x 201.67804pt.
+
+Overfull \hbox (41.51273pt too wide) in paragraph at lines 573--574
+ [][] 
+ []
+
+<figureForTex/step1359.jpg, id=207, 743.02594pt x 636.87938pt>
+File: figureForTex/step1359.jpg Graphic file (type jpg)
+
+<use figureForTex/step1359.jpg>
+Package pdftex.def Info: figureForTex/step1359.jpg used on input line 578.
+(pdftex.def)             Requested size: 231.26378pt x 198.22743pt.
+
+Overfull \hbox (189.75105pt too wide) in paragraph at lines 571--581
+[][][] 
+ []
+
+[23 <./figureForTex/step335.jpg> <./figureForTex/step1359.jpg>]
+<figureForTex/step316.jpg, id=211, 730.98094pt x 624.83438pt>
+File: figureForTex/step316.jpg Graphic file (type jpg)
+
+<use figureForTex/step316.jpg>
+Package pdftex.def Info: figureForTex/step316.jpg used on input line 588.
+(pdftex.def)             Requested size: 231.26378pt x 197.68195pt.
+
+Overfull \hbox (41.51273pt too wide) in paragraph at lines 588--589
+ [][] 
+ []
+
+<figureForTex/step4090.jpg, id=212, 761.09344pt x 639.89063pt>
+File: figureForTex/step4090.jpg Graphic file (type jpg)
+
+<use figureForTex/step4090.jpg>
+Package pdftex.def Info: figureForTex/step4090.jpg used on input line 593.
+(pdftex.def)             Requested size: 231.26378pt x 194.42917pt.
+
+Overfull \hbox (189.75105pt too wide) in paragraph at lines 586--596
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
+
+ []
+
+<figureForTex/step1499.jpg, id=213, 733.23938pt x 628.59843pt>
+File: figureForTex/step1499.jpg Graphic file (type jpg)
+
+<use figureForTex/step1499.jpg>
+Package pdftex.def Info: figureForTex/step1499.jpg used on input line 616.
+(pdftex.def)             Requested size: 231.26378pt x 198.25893pt.
+
+Overfull \hbox (58.76378pt too wide) in paragraph at lines 616--617
+ [][] 
+ []
+
+<figureForTex/step7634.jpg, id=214, 737.00343pt x 632.3625pt>
+File: figureForTex/step7634.jpg Graphic file (type jpg)
+
+<use figureForTex/step7634.jpg>
+Package pdftex.def Info: figureForTex/step7634.jpg used on input line 621.
+(pdftex.def)             Requested size: 231.26378pt x 198.42331pt.
+
+Overfull \hbox (207.0021pt too wide) in paragraph at lines 614--624
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--624
+
+ []
+
+[24 <./figureForTex/step316.jpg> <./figureForTex/step4090.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 627--628
+
+ []
+
+[25 <./figureForTex/step1499.jpg> <./figureForTex/step7634.jpg>]
+(report_polymer.aux) ) 
 Here is how much of TeX's memory you used:
- 7318 strings out of 493698
- 97413 string characters out of 3144418
- 192672 words of memory out of 3000000
- 10491 multiletter control sequences out of 15000+200000
+ 7540 strings out of 493698
+ 105475 string characters out of 3144418
+ 196429 words of memory out of 3000000
+ 10674 multiletter control sequences out of 15000+200000
  54593 words of font info for 68 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 42i,12n,42p,484b,1288s stack positions out of 5000i,500n,10000p,200000b,50000s
-{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
-thsy.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{d:/Program 
-Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{d:/Program Files/MiKTeX 2.9/
-fonts/enc/dvips/fontname/8r.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm
-/lm-mathex.enc}<d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx5.pfb><d
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><d:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><d:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><d:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><d:/Program Files/MiKTeX
- 2.9/fonts/type1/public/lm/lmbsy7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/
-public/lm/lmbx12.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx7.p
-fb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><d:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><d:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmmi5.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmmi7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmib7.pfb><d:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><d:/Program Files/MiKTe
-X 2.9/fonts/type1/public/lm/lmr12.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/
-public/lm/lmr17.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb
-><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><d:/Program Files/
-MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><d:/Program Files/MiKTeX 2.9/fonts/
-type1/public/lm/lmsy7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/
-ucrr8a.pfb>
-Output written on report_polymer.pdf (6 pages, 303092 bytes).
+ 42i,12n,42p,507b,1617s stack positions out of 5000i,500n,10000p,200000b,50000s
+{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy
+.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{d:/Program File
+s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{d:/Program Files/MiKTeX 2.9/font
+s/enc/dvips/fontname/8r.enc}{d:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+mathex.enc}<d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.p
+fb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx5.pfb><d:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><d:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><d:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><d:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><d:/Program Files/MiKTeX 2.9
+/fonts/type1/public/lm/lmbsy7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmbx10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb>
+<d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx7.pfb><d:/Program Files/
+MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><d:/Program Files/MiKTeX 2.9/fonts/
+type1/public/lm/lmmi10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
+mmi5.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><d:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmmib7.pfb><d:/Program Files/MiKTeX 2
+.9/fonts/type1/public/lm/lmr10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmr12.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><
+d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><d:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/lm/lmr7.pfb><d:/Program Files/MiKTeX 2.9/fonts/type
+1/public/lm/lmsy10.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7
+.pfb><d:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on report_polymer.pdf (25 pages, 1249708 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
+ 298 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 

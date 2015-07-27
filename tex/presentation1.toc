@@ -1,5 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{The mean enounter time simulation}{2}{0}{1}
-\beamer@sectionintoc {2}{End to End vector Simulation in the Rouse Model}{5}{0}{2}
-\beamer@sectionintoc {3}{Random walk simulation}{7}{0}{3}
-\beamer@sectionintoc {4}{Perspective}{9}{0}{4}
