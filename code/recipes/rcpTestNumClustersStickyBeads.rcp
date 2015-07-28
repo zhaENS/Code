@@ -14,14 +14,14 @@ connectMat  = obj.objectManager.connectivity;
 connectMat  = connectMat & ~diag(true(1,size(connectMat,1)-1),1)  & ~diag(true(1,size(connectMat,1)-1),-1);
 numSim  = obj.simulationRound;
 numStep = obj.simulationData(numSim).step;
-dt      = obj.params.simulator.dt;
 % find the number of clusters
 [s,~,~] = networkComponents(connectMat);
-obj.dataRecorder.params.numCluster{numSim}(numStep) = s;       
+obj.dataRecorder.params.numCluster{numSim}(numStep) = s;      
 <func> PostRunActions </func>
 %Actions performed sfter each simulation run.
 numSim  = obj.simulationRound;
 numStep = obj.simulationData(numSim).step;
+dt      = obj.params.simulator.dt;
 idx= min(find(obj.dataRecorder.params.numCluster{numSim}~=0));
 k = 1;
 for nIdx = idx:numStep-1
@@ -30,6 +30,7 @@ cIdx(k) = nIdx+1;
 k = k+1;
 end
 end
+obj.dataRecorder.params.stickyTime{numSim} = [idx*dt cIdx*dt];
 numCluster(numSim,1) =  obj.dataRecorder.params.numCluster{numSim}(idx);
 numCluster(numSim,2:k)= obj.dataRecorder.params.numCluster{numSim}(cIdx);
 obj.dataRecorder.params.numCluster{numSim} = zeros(1,k);
