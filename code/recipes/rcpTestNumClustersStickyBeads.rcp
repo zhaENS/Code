@@ -10,6 +10,18 @@
 %Actions performed before each step of the Rouse chain.
 <func> PostStepActions </func>
 %Actions performed before each step of the Rouse chain.
+cp = numel(obj.objectManager.handles.chain);
+numSim  = obj.simulationRound;
+if obj.simulationData(numSim).step > 3000
+obj.params.chain(1).stickyBeads = [1 65];
+obj.params.chain(2).stickyBeads = [1 65];
+obj.params.chain(3).stickyBeads = [1 65];
+obj.params.chain(4).stickyBeads = [1 65];
+obj.params.chain(5).stickyBeads = [1 65];
+obj.params.chain(6).stickyBeads = [1 65];
+obj.params.chain(7).stickyBeads = [1 65];
+obj.params.chain(8).stickyBeads = [1 65];
+end
 connectMat  = obj.objectManager.connectivity;
 connectMat  = connectMat & ~diag(true(1,size(connectMat,1)-1),1)  & ~diag(true(1,size(connectMat,1)-1),-1);
 numSim  = obj.simulationRound;
@@ -26,13 +38,13 @@ idx= min(find(obj.dataRecorder.params.numCluster{numSim}~=0));
 k = 1;
 for nIdx = idx:numStep-1
 if obj.dataRecorder.params.numCluster{numSim}(nIdx)~=obj.dataRecorder.params.numCluster{numSim}(nIdx+1)
-cIdx(k) = nIdx+1;
+dIdx(k) = nIdx+1;
 k = k+1;
 end
 end
-obj.dataRecorder.params.stickyTime{numSim} = [idx*dt cIdx*dt];
+obj.dataRecorder.params.stickyTime{numSim} = [idx*dt dIdx*dt];
 numCluster(numSim,1) =  obj.dataRecorder.params.numCluster{numSim}(idx);
-numCluster(numSim,2:k)= obj.dataRecorder.params.numCluster{numSim}(cIdx);
+numCluster(numSim,2:k)= obj.dataRecorder.params.numCluster{numSim}(dIdx);
 obj.dataRecorder.params.numCluster{numSim} = zeros(1,k);
 obj.dataRecorder.params.numCluster{numSim}= numCluster(numSim,:);
 <func> PostSimulationBatchActions </func>

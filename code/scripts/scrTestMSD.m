@@ -3,7 +3,7 @@
 
 frameWorksParams = SimulationFrameworkParams('numSteps',100,'showSimulation',true,'dt',0.1,...
                     'numChains',1,'objectInteraction',false,'dimension',3,...
-                     'encounterDist',sqrt(3)/5,'recordData',true);
+                     'encounterDist',sqrt(3)/5,'recordData','true');
 
 %define a domain
 diffConst = 0.1;
@@ -30,7 +30,6 @@ cp(1)= ChainParams('numBeads',64,'initializeInDomain',1,'springForce',true,...
                    'beadsOnBoundary',[]); 
 frameWorksParams.SetDomainParams(dp);
 frameWorksParams.SetChainParams(cp);
-
 % initialize simulator framework
 r = RouseSimulatorFramework(frameWorksParams);
 %run;
