@@ -1,9 +1,11 @@
-%This function is used to test the MSD of a chain with one fixed bead lay on the
-%boundary;
+%This function is used to test the MSD of a chain with one bead lay on the
+%boundary;This beads can be either fixed or moved on the boudary;
+%During the simulation ,the beads move on the boundary when numSimulation
+%is pair,or it'll be fixed on the boundary;
 
-frameWorksParams = SimulationFrameworkParams('numSteps',100,'showSimulation',true,'dt',0.1,...
+frameWorksParams = SimulationFrameworkParams('numSimulations',20,'numSteps',10000,'showSimulation',true,'dt',0.1,...
                     'numChains',1,'objectInteraction',false,'dimension',3,...
-                     'encounterDist',sqrt(3)/5,'recordData','true');
+                     'encounterDist',sqrt(3)/5,'recordData','true','recipeFileName','rcpTestRelaxationTimeStickyBeadsSim');
 
 %define a domain
 diffConst = 0.1;
@@ -34,4 +36,5 @@ frameWorksParams.SetChainParams(cp);
 r = RouseSimulatorFramework(frameWorksParams);
 %run;
 r.Run;
+
 
