@@ -8,6 +8,10 @@
 %Note that SimpleRouse class is initialized before each simulation
 numSim = obj.simulationRound;
 cp = numel(obj.objectManager.handles.chain);
+if numSim
+obj.objectManager.handles.chain.InitializeRouseStruct;
+obj.objectManager.handles.chain.SetInitialChainPosition(obj.handles.classes.domain);
+end
 for cIdx=1:numel(cp)
 if mod(numSim,2)==0
 obj.objectManager.handles.chain(cIdx).params.beadsOnBoundary = [1];
@@ -19,11 +23,6 @@ end
 %Actions performed before each step of the Rouse chain.
 <func> PostStepActions </func>
 %Actions performed before each step of the Rouse chain.
-%cp = numel(obj.objectManager.handles.chain);
-%numSim  = obj.simulationRound;
-%if obj.simulationData(numSim).step > 100
-%for cIdx = 1:numel(cp)
- %obj.objectManager.handles.chain(cIdx).params.stickyBeads = [1 65];
 %end
 %end
 <func> PostRunActions </func>

@@ -3,9 +3,9 @@
 %During the simulation ,the beads move on the boundary when numSimulation
 %is pair,or it'll be fixed on the boundary;
 
-frameWorksParams = SimulationFrameworkParams('numSimulations',20,'numSteps',10000,'showSimulation',true,'dt',0.1,...
+frameWorksParams = SimulationFrameworkParams('numSimulations',4,'numSteps',2000,'showSimulation',true,'dt',0.1,...
                     'numChains',1,'objectInteraction',false,'dimension',3,...
-                     'encounterDist',sqrt(3)/5,'recordData','true','recipeFileName','rcpTestRelaxationTimeStickyBeadsSim');
+                     'encounterDist',sqrt(3)/5,'recordData','true','recipeFileName','rcpSetInitialRouseChain');
 
 %define a domain
 diffConst = 0.1;
@@ -29,12 +29,15 @@ cp(1)= ChainParams('numBeads',64,'initializeInDomain',1,'springForce',true,...
                    'forceParams',chainForce,...
                    'b', sqrt(frameWorksParams.simulator.dimension),...
                    'dt',frameWorksParams.simulator.dt,...
-                   'beadsOnBoundary',[]); 
+                   'beadsOnBoundary',[],...
+                   'maxStepsOnBoundaryPerTime', 10); 
+               
 frameWorksParams.SetDomainParams(dp);
 frameWorksParams.SetChainParams(cp);
 % initialize simulator framework
 r = RouseSimulatorFramework(frameWorksParams);
-%run;
 r.Run;
+%run;
+
 
 
