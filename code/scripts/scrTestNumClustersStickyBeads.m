@@ -3,13 +3,13 @@
 
 %Initialisation the framework parameters;
 
-frameWorksParams = SimulationFrameworkParams('numSimulations',2,'numSteps',100,'showSimulation',true,'dt',0.1,...
+frameWorksParams = SimulationFrameworkParams('numSimulations',3,'numSteps',1000,'showSimulation',true,'dt',0.1,...
                     'numChains',8,'objectInteraction',false,'dimension',3,'encounterDist',sqrt(3)/5,...,
-                    'recipeFileName','rcpTestNumClustersStickyBeads');
+                    'recipeFileName','rcpRelaxationTimeStickyBeads');
                     
 
 %define a domain
-diffConst = 0.001;
+diffConst = 0.01;
 sphereForce = ForceManagerParams('diffusionForce',true,'diffusionConst',diffConst,...
                                  'lennardJonesForce',false,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01,'dt',...
                                   frameWorksParams.simulator.dt);

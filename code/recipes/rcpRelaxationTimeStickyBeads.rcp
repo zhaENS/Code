@@ -1,0 +1,39 @@
+<description> test recipe for number of clusters of sticky beads</description>
+<func> SetRecipeParams </func>
+%Insert parameters as obj.params.[paramsName]=[paramsValue]
+<func> PreSimulationBatchActions </func>
+%Actions performed before each simulation batch
+<func> PreRunActions </func>
+%Actions performed before each simulation run.
+%Note that SimpleRouse class is initialized before each simulation
+numSim = obj.simulationRound;
+cp = numel(obj.objectManager.handles.chain);
+if numSim
+obj.InitializeObjectManager;%initialize the objects for each simulation;
+obj.params.chain(1).stickyBeads = [];
+obj.params.chain(2).stickyBeads = [];
+obj.params.chain(3).stickyBeads = [];
+obj.params.chain(4).stickyBeads = [];
+obj.params.chain(5).stickyBeads = [];
+obj.params.chain(6).stickyBeads = [];
+obj.params.chain(7).stickyBeads = [];
+obj.params.chain(8).stickyBeads = [];
+end
+<func> PreStepActions </func>
+%Actions performed before each step of the Rouse chain.
+<func> PostStepActions </func>
+%Actions performed before each step of the Rouse chain.
+cp = numel(obj.objectManager.handles.chain);
+numSim  = obj.simulationRound;
+if obj.simulationData(numSim).step > 100
+obj.params.chain(1).stickyBeads = [1 65];
+obj.params.chain(2).stickyBeads = [1 65];
+obj.params.chain(3).stickyBeads = [1 65];
+obj.params.chain(4).stickyBeads = [1 65];
+obj.params.chain(5).stickyBeads = [1 65];
+obj.params.chain(6).stickyBeads = [1 65];
+obj.params.chain(7).stickyBeads = [1 65];
+obj.params.chain(8).stickyBeads = [1 65];
+end
+<func> PostSimulationBatchActions </func>
+%Actions performed before each simulation batch.
