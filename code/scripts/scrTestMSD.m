@@ -5,7 +5,7 @@
 
 frameWorksParams = SimulationFrameworkParams('numSimulations',2,'numSteps',11000,'showSimulation',true,'dt',0.1,...
                     'numChains',1,'objectInteraction',false,'dimension',3,...
-                     'encounterDist',sqrt(3)/5,'recordData','true','recipeFileName','rcpSetInitialRouseChain');
+                     'encounterDist',sqrt(3)/5,'recipeFileName','rcpRelaxationTimeBeadsOnBoundary');
 
 %define a domain
 diffConst = 0.1;
@@ -13,7 +13,7 @@ sphereForce = ForceManagerParams('diffusionForce',true,'diffusionConst',diffCons
                                  'lennardJonesForce',false,'LJPotentialWidth',0.01,'LJPotentialDepth',0.01,'dt',...
                                   frameWorksParams.simulator.dt);
 dp          = DomainHandlerParams('domainShape','sphere','forceParams',sphereForce,'showDomain',true,'domainWidth',...
-                                  25,'dt',frameWorksParams.simulator.dt,'diffusionConst',diffConst);
+                                  25,'dt',frameWorksParams.simulator.dt,'diffusionConst',diffConst,'moveDomainType','none');
                               
 dh          =DomainHandler(dp);                             
 %define a chain;

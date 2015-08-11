@@ -1,19 +1,20 @@
   close all
   clear all
 % define rotation matrix
-Rx =@(roll) [1 0 0;0 cos(roll) sin(roll);0 -sin(roll) cos(roll)];
-Ry =@(pitch) [cos(pitch) 0 -sin(pitch) ;0 1 0 ;sin(pitch) 0 cos(pitch)];
-Rz =@(yaw) [cos(yaw) sin(yaw) 0;-sin(yaw) cos(yaw) 0;0 0 1];
+Rx =@(roll) [1 0 0;0 cos(roll) -sin(roll);0 sin(roll) cos(roll)];
+Ry =@(pitch) [cos(pitch) 0 sin(pitch) ;0 1 0 ;-sin(pitch) 0 cos(pitch)];
+Rz =@(yaw) [cos(yaw) -sin(yaw) 0;sin(yaw) cos(yaw) 0;0 0 1];
 
-rotationMatrix = @(yaw,pitch,roll) Rx(roll)*Ry(pitch)*Rz(yaw);
+rotationMatrix = @(yaw,pitch,roll) Rz(yaw)*Ry(pitch)*Rx(roll);
 
 
 
-initialPoint = [sqrt(50) 5 5];
+%initialPoint = [sqrt(50) 5 5];
+initialPoint = [sqrt(50)+1 6 5];
 dt           = 0.1;
 diffConst    = 1;
 numSteps     = 100;
-domainCenter = [0 0 0];
+domainCenter = [1 1 0];
 radius       = 10;
 paths        = DiffusionOnSphere(initialPoint,dt,diffConst,numSteps,domainCenter,radius);
 theta = atan(paths(:,2)./paths(:,1));
@@ -22,9 +23,9 @@ phi   = atan(sqrt(paths(:,1).^2+paths(:,2).^2)./paths(:,3));
 % define translation and rotation 
 yaw   = 0;
 pitch = 0;
-roll  = pi;
+roll  = 0;
 
-TransVector = [20 2 4];
+TransVector = [22 4 10];
 
 [sx,sy,sz]    = sphere(20);
 sx            = sx*radius;

@@ -10,6 +10,7 @@ numSim = obj.simulationRound;
 if numSim
 obj.InitializeObjectManager;
 end
+cp = numel(obj.objectManager.handles.chain);
 for cIdx=1:numel(cp)
 if mod(numSim,2)==0
 obj.objectManager.handles.chain(cIdx).params.beadsOnBoundary = [1];

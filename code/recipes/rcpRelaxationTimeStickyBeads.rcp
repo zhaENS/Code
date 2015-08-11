@@ -25,7 +25,7 @@ end
 %Actions performed before each step of the Rouse chain.
 cp = numel(obj.objectManager.handles.chain);
 numSim  = obj.simulationRound;
-if obj.simulationData(numSim).step > 100
+if obj.simulationData(numSim).step > 2000
 obj.params.chain(1).stickyBeads = [1 65];
 obj.params.chain(2).stickyBeads = [1 65];
 obj.params.chain(3).stickyBeads = [1 65];
