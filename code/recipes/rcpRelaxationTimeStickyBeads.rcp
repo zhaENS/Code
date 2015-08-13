@@ -18,6 +18,14 @@ obj.params.chain(5).stickyBeads = [];
 obj.params.chain(6).stickyBeads = [];
 obj.params.chain(7).stickyBeads = [];
 obj.params.chain(8).stickyBeads = [];
+%obj.params.chain(9).stickyBeads = [];
+%obj.params.chain(10).stickyBeads = [];
+%obj.params.chain(11).stickyBeads = [];
+%obj.params.chain(12).stickyBeads = [];
+%obj.params.chain(13).stickyBeads = [];
+%obj.params.chain(14).stickyBeads = [];
+%obj.params.chain(15).stickyBeads = [];
+%obj.params.chain(16).stickyBeads = [];
 end
 <func> PreStepActions </func>
 %Actions performed before each step of the Rouse chain.
@@ -25,7 +33,7 @@ end
 %Actions performed before each step of the Rouse chain.
 cp = numel(obj.objectManager.handles.chain);
 numSim  = obj.simulationRound;
-if obj.simulationData(numSim).step > 2000
+if obj.simulationData(numSim).step > 50
 obj.params.chain(1).stickyBeads = [1 65];
 obj.params.chain(2).stickyBeads = [1 65];
 obj.params.chain(3).stickyBeads = [1 65];
@@ -34,6 +42,17 @@ obj.params.chain(5).stickyBeads = [1 65];
 obj.params.chain(6).stickyBeads = [1 65];
 obj.params.chain(7).stickyBeads = [1 65];
 obj.params.chain(8).stickyBeads = [1 65];
+%obj.params.chain(9).stickyBeads = [1 65];
+%obj.params.chain(10).stickyBeads = [1 65];
+%obj.params.chain(11).stickyBeads = [1 65];
+%obj.params.chain(12).stickyBeads = [1 65];
+%obj.params.chain(13).stickyBeads = [1 65];
+%obj.params.chain(14).stickyBeads = [1 65];
+%obj.params.chain(15).stickyBeads = [1 65];
+%obj.params.chain(16).stickyBeads = [1 65];
+end
+if obj.objectManager.numObjects==1
+obj.runSimulation=0;
 end
 <func> PostSimulationBatchActions </func>
 %Actions performed before each simulation batch.
