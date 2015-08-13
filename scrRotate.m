@@ -21,11 +21,11 @@ theta = atan(paths(:,2)./paths(:,1));
 phi   = atan(sqrt(paths(:,1).^2+paths(:,2).^2)./paths(:,3));
 
 % define translation and rotation 
-yaw   = 0;
+yaw   = pi;
 pitch = 0;
 roll  = 0;
 
-TransVector = [22 4 10];
+TransVector = [0 0 0];
 
 [sx,sy,sz]    = sphere(20);
 sx            = sx*radius;
