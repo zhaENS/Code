@@ -33,7 +33,8 @@ end
 %Actions performed before each step of the Rouse chain.
 cp = numel(obj.objectManager.handles.chain);
 numSim  = obj.simulationRound;
-if obj.simulationData(numSim).step > 50
+step    = obj.dataRecorder.simulationData(numSim).step;
+if obj.simulationData(numSim).step > 2000
 obj.params.chain(1).stickyBeads = [1 65];
 obj.params.chain(2).stickyBeads = [1 65];
 obj.params.chain(3).stickyBeads = [1 65];
@@ -51,7 +52,10 @@ obj.params.chain(8).stickyBeads = [1 65];
 %obj.params.chain(15).stickyBeads = [1 65];
 %obj.params.chain(16).stickyBeads = [1 65];
 end
-if obj.objectManager.numObjects==1
+connectMat  = obj.objectManager.connectivity;
+connectMat  = connectMat & ~diag(true(1,size(connectMat,1)-1),1)  & ~diag(true(1,size(connectMat,1)-1),-1);
+[s,~,~] = networkComponents(connectMat);       
+if obj.objectManager.numObjects==1&&s==1
 obj.runSimulation=0;
 end
 <func> PostSimulationBatchActions </func>
