@@ -247,7 +247,7 @@ classdef RouseSimulatorFramework<handle
             end
             end
             end
-           obj.objectManager.DealCurrentPosition(oIdx,reshape([curParticlePosition{:}],numel(members)*64,3)); 
+           obj.objectManager.DealCurrentPosition(oIdx,curParticlePosition{mIdx}); 
           % obj.objectManager.DealPreviousPosition(oIdx,reshape([prevParticlePosition{:}],numel(members)*64,3));
            end           
              s    = domainInd(stickyBeads);

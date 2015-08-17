@@ -10,14 +10,13 @@ numSim = obj.simulationRound;
 if numSim
 obj.InitializeObjectManager;
 end
-cp = numel(obj.objectManager.handles.chain);
-for cIdx=1:numel(cp)
-if mod(numSim,2)==0
-obj.objectManager.handles.chain(cIdx).params.beadsOnBoundary = [1];
-else
-obj.objectManager.handles.chain(cIdx).params.beadsOnBoundary = [];
-end
-end
+%cp = numel(obj.objectManager.handles.chain);
+%if mod(numSim,2)==0
+%obj.objectManager.handles.chain(cIdx).params.beadsOnBoundary = [1];
+%else
+%obj.objectManager.handles.chain(cIdx).params.beadsOnBoundary = [];
+%end
+%end
 <func> PreStepActions </func>
 %Actions performed before each step of the Rouse chain.
 <func> PostStepActions </func>
