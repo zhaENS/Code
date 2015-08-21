@@ -8,7 +8,7 @@
 %Note that SimpleRouse class is initialized before each simulation
 numSim = obj.simulationRound;
 cp = numel(obj.objectManager.handles.chain);
-if numSim
+if numSim>1
 obj.InitializeObjectManager;%initialize the objects for each simulation;
 obj.params.chain(1).stickyBeads = [];
 obj.params.chain(2).stickyBeads = [];

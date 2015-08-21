@@ -8,5 +8,5 @@ diffConst    = 0.1;
 numSteps     = 100;
 domainCenter = [0 0 0];
 radius       = sqrt(sum(initialPoint.^2));
-
-paths = DiffusionOnSphere(initialPoint,dt,diffConst,numSteps,domainCenter,radius);
+w =0;
+paths = DiffusionOnSphere(initialPoint,dt,diffConst,numSteps,domainCenter,radius,w);

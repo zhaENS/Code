@@ -16,7 +16,8 @@ diffConst    = 1;
 numSteps     = 100;
 domainCenter = [1 1 0];
 radius       = 10;
-paths        = DiffusionOnSphere(initialPoint,dt,diffConst,numSteps,domainCenter,radius);
+w            = 0;
+paths        = DiffusionOnSphere(initialPoint,dt,diffConst,numSteps,domainCenter,radius,w);
 theta = atan(paths(:,2)./paths(:,1));
 phi   = atan(sqrt(paths(:,1).^2+paths(:,2).^2)./paths(:,3));
 

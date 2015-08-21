@@ -13,7 +13,8 @@ numSteps    = beadIndices(end)-beadIndices(1)+1;
 % theta         = 0+(2*pi-0)*rand ; 
 % points(1,:)   = radius.*[sin(phi)*cos(theta), sin(phi)*sin(theta),cos(phi)];
 %pathOnSurface = DiffuseOnSphere(initialPoint,numSteps,radius,domainCenter,dt,diffusionConst);
-pathOnSurface = DiffusionOnSphere(initialPoint,dt,diffusionConst,numSteps,domainCenter,radius);
+w = 0;
+pathOnSurface = DiffusionOnSphere(initialPoint,dt,diffusionConst,numSteps,domainCenter,radius,w);
 pointIndices  = beadIndices -beadIndices(1)+1; 
 points        = pathOnSurface(pointIndices,:);
 

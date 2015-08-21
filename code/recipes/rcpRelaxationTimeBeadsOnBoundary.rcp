@@ -7,7 +7,7 @@
 %Actions performed before each simulation run.
 %Note that SimpleRouse class is initialized before each simulation
 numSim = obj.simulationRound;
-if numSim
+if numSim>1
 obj.InitializeObjectManager;
 end
 %cp = numel(obj.objectManager.handles.chain);
