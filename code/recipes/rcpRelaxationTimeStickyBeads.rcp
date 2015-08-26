@@ -18,14 +18,6 @@ obj.params.chain(5).stickyBeads = [];
 obj.params.chain(6).stickyBeads = [];
 obj.params.chain(7).stickyBeads = [];
 obj.params.chain(8).stickyBeads = [];
-%obj.params.chain(9).stickyBeads = [];
-%obj.params.chain(10).stickyBeads = [];
-%obj.params.chain(11).stickyBeads = [];
-%obj.params.chain(12).stickyBeads = [];
-%obj.params.chain(13).stickyBeads = [];
-%obj.params.chain(14).stickyBeads = [];
-%obj.params.chain(15).stickyBeads = [];
-%obj.params.chain(16).stickyBeads = [];
 end
 <func> PreStepActions </func>
 %Actions performed before each step of the Rouse chain.
@@ -43,14 +35,6 @@ obj.params.chain(5).stickyBeads = [1 65];
 obj.params.chain(6).stickyBeads = [1 65];
 obj.params.chain(7).stickyBeads = [1 65];
 obj.params.chain(8).stickyBeads = [1 65];
-%obj.params.chain(9).stickyBeads = [1 65];
-%obj.params.chain(10).stickyBeads = [1 65];
-%obj.params.chain(11).stickyBeads = [1 65];
-%obj.params.chain(12).stickyBeads = [1 65];
-%obj.params.chain(13).stickyBeads = [1 65];
-%obj.params.chain(14).stickyBeads = [1 65];
-%obj.params.chain(15).stickyBeads = [1 65];
-%obj.params.chain(16).stickyBeads = [1 65];
 end
 connectMat  = obj.objectManager.connectivity;
 connectMat  = connectMat & ~diag(true(1,size(connectMat,1)-1),1)  & ~diag(true(1,size(connectMat,1)-1),-1);
