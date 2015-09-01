@@ -13,7 +13,7 @@ if (rho-radius)^2>eps
 end
 %generate a path 2D with numStep;
 if all([ang' magnitude])~=0
-noise = [zeros(1,2);bsxfun(@plus,sqrt(2*diffConst*dt)*randn(numSteps-1,2),magnitude.*[cos(ang),sin(ang)])];
+noise = [zeros(1,2);bsxfun(@plus,sqrt(2*diffConst*dt)*randn(numSteps-1,2),magnitude.*[cos(ang),cos(ang-pi/2)])];
 else
 noise = [zeros(1,2);sqrt(2*diffConst*dt)*randn(numSteps-1,2)];    
 end
@@ -34,7 +34,7 @@ paths = [paths zeros(numSteps,1)];
 paths(:,3) = bsxfun(@plus, paths(:,3),radius);
 % plot3([domainCenter,initialPoint(1,1)],[domainCenter initialPoint(1,2)],[domainCenter initialPoint(1,3)],'g','LineWidth',3);hold on
 % plot3([paths(:,1)],[paths(:,2)],[paths(:,3)],'g','LineWidth',3);
-
+% 
 % hold on
 % % %defini the rotation matrix; 
 % plot3(initialPoint(:,1),initialPoint(:,2),initialPoint(:,3),'o','MarkerSize',4);
@@ -51,7 +51,7 @@ paths = (Rz*Ry*bsxfun(@minus,paths,domainCenter)')';
 % mesh(sx,sy,sz,'FaceColor','none','EdgeColor','g'), hold on, 
 % cameratoolbar
 % daspect([1 1 1])
-% plot3(paths(:,1), paths(:,2),paths(:,3),'LineWidth',2);
+%plot3(paths(:,1), paths(:,2),paths(:,3),'LineWidth',2);
 
 
 %project the paths back on the sphere;

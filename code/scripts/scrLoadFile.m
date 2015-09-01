@@ -1,6 +1,6 @@
 clear all
 %file=dir('C:\projectsENS\PolymerChainDynamicsResults\21_8_2015\*.mat');
-file=dir('D:\Zha\Project\PolymerChainDynamicsResults1\26_8_2015\*.mat');
+file=dir('D:\Zha\Project\PolymerChainDynamicsResults\28_8_2015\*.mat');
 m=zeros(64,5000,numel(file));
 for i=1:length(file)
 load(file(i).name);
@@ -11,6 +11,7 @@ for sIdx=1:5000
 MSD(sIdx,:)=mean(m(:,sIdx,:),3);
 end
 plot(MSD);
+
 
 % for i=1:length(file)
 % load(file(i).name);

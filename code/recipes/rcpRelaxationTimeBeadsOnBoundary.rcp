@@ -16,14 +16,7 @@ end
 %Actions performed after each step of the Rouse chain.
 
 % find beads on boundary
-%beadsOnBoundary = ...
-% add to the x component of each bead cos(t_i)
-% add to the y component of each bead sin(t_i)
-% t_i is a function of the step of the simulation [0 2*pi]
-% t   = 0:0.1:2*pi;
-% t_i = t(mod(obj.simulationData.step,numel(t)));
-%cx = cos(t_i);
-%cy = sin(t_i);
+
 % beadsOnBoundary
 
 
