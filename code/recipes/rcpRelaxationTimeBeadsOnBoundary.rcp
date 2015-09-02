@@ -14,14 +14,6 @@ end
 %Actions performed before each step of the Rouse chain.
 <func> PostStepActions </func>
 %Actions performed after each step of the Rouse chain.
-
-% find beads on boundary
-
-% beadsOnBoundary
-
-
-
-% 
 <func> PostRunActions </func>
 %Actions performed sfter each simulation run.
 <func> PostSimulationBatchActions </func>

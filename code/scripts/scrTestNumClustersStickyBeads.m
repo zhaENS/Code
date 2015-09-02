@@ -3,8 +3,8 @@
 
 %Initialisation the framework parameters;
 
-frameWorksParams = SimulationFrameworkParams('numSimulations',100,'numSteps',Inf,'showSimulation',true,'dt',0.1,...
-                    'numChains',8,'objectInteraction',false,'dimension',3,'encounterDist',sqrt(3)/5,...,
+frameWorksParams = SimulationFrameworkParams('numSimulations',1,'numSteps',Inf,'showSimulation',true,'dt',0.1,...
+                    'numChains',2,'objectInteraction',false,'dimension',3,'encounterDist',sqrt(3)/5,...,
                     'recipeFileName','rcpRelaxationTimeStickyBeads');
                     
 
